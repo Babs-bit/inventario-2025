@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventário Anual Patrimonial 2025 - Faculdade de Odontologia UFMG</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .hero-bg {
+            background-color: #003366;
+        }
+        .section-title {
+            border-left: 4px solid #0053a6;
+            padding-left: 1rem;
+        }
+        .category-card, .quick-access-card {
+            transition: all 0.2s ease-in-out;
+        }
+        .category-card:hover, .quick-access-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            border-color: #0053a6;
+        }
+        .subcategory-accordion-item {
+            transition: box-shadow 0.2s ease-in-out;
+        }
+        .subcategory-accordion-item:hover {
+             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .subcategory-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+            padding: 0 1rem; /* Padding horizontal fixo */
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Cabeçalho e Navegação -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <span class="text-base md:text-lg font-semibold text-gray-600">SEÇÃO DE PATRIMÔNIO - FAO UFMG</span>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#inicio" class="text-gray-600 hover:text-blue-700 transition">Início</a>
+                <a href="#relatorios" class="text-gray-600 hover:text-blue-700 transition">Relatórios</a>
+                <a href="#guias" class="text-gray-600 hover:text-blue-700 transition">Guias e Formulários</a>
+                <a href="#comissao" class="text-gray-600 hover:text-blue-700 transition">Comissão</a>
+                <a href="#contato" class="text-gray-600 hover:text-blue-700 transition">Contato</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="#inicio" class="block py-2 text-gray-600 hover:text-blue-700">Início</a>
+            <a href="#relatorios" class="block py-2 text-gray-600 hover:text-blue-700">Relatórios</a>
+            <a href="#guias" class="block py-2 text-gray-600 hover:text-blue-700">Guias e Tutoriais</a>
+            <a href="#comissao" class="block py-2 text-gray-600 hover:text-blue-700">Comissão</a>
+            <a href="#contato" class="block py-2 text-gray-600 hover:text-blue-700">Contato</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Seção Inicial (Hero) -->
+        <section id="inicio" class="hero-bg text-white">
+            <div class="container mx-auto px-6 py-24 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">Inventário Anual Patrimonial 2025</h1>
+                <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto">Modernizando e simplificando a gestão de bens móveis da Faculdade de Odontologia da UFMG</p>
+                <div class="bg-white/20 backdrop-blur-sm border border-white/30 rounded-lg p-6 max-w-md mx-auto">
+                    <h2 class="text-xl font-semibold mb-2">Prazo Final para Entrega</h2>
+                    <p class="text-4xl font-bold text-yellow-300">05 de Dezembro</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Contagem Regressiva -->
+        <section id="countdown" class="py-12 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <div id="countdown-container" class="text-2xl md:text-3xl font-bold text-gray-700 flex flex-col items-center justify-center">
+                    <!-- Conteúdo do contador será inserido aqui pelo JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Acesso Rápido -->
+        <section id="acesso-rapido" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold section-title inline-block">Acesso Rápido</h2>
+                    <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Encontre rapidamente as seções mais importantes do portal</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+                    <a href="#relatorios" class="quick-access-card bg-white p-6 rounded-lg border-2 border-transparent text-center group">
+                        <i data-lucide="file-search" class="mx-auto h-10 w-10 text-blue-600 mb-3 transition-transform group-hover:scale-110"></i>
+                        <h3 class="text-lg font-bold text-gray-800">Encontrar Relatório</h3>
+                    </a>
+                    <a href="#faq" class="quick-access-card bg-white p-6 rounded-lg border-2 border-transparent text-center group">
+                        <i data-lucide="help-circle" class="mx-auto h-10 w-10 text-blue-600 mb-3 transition-transform group-hover:scale-110"></i>
+                        <h3 class="text-lg font-bold text-gray-800">Tira-dúvidas</h3>
+                    </a>
+                    <a href="#guias" class="quick-access-card bg-white p-6 rounded-lg border-2 border-transparent text-center group">
+                        <i data-lucide="book-open" class="mx-auto h-10 w-10 text-blue-600 mb-3 transition-transform group-hover:scale-110"></i>
+                        <h3 class="text-lg font-bold text-gray-800">Guias e Formulários</h3>
+                    </a>
+                    <a href="#comissao" class="quick-access-card bg-white p-6 rounded-lg border-2 border-transparent text-center group">
+                        <i data-lucide="users" class="mx-auto h-10 w-10 text-blue-600 mb-3 transition-transform group-hover:scale-110"></i>
+                        <h3 class="text-lg font-bold text-gray-800">Comissão</h3>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Busca de Relatórios -->
+        <section id="relatorios" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold section-title inline-block">Encontre seu Relatório</h2>
+                    <p class="text-red-600 mt-4 max-w-2xl mx-auto">Atenção! Envie o relatório para odontoinventario2025@gmail.com</p>
+                </div>
+
+                <!-- Navegação por Blocos -->
+                <div id="report-navigation" class="max-w-5xl mx-auto">
+                    <!-- Blocos de Categorias Principais -->
+                    <div id="main-categories" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="category-card bg-white p-6 rounded-lg border-2 border-transparent cursor-pointer text-center" data-category="departamentos">
+                            <i data-lucide="building-2" class="mx-auto h-12 w-12 text-blue-600 mb-4"></i>
+                            <h3 class="text-xl font-bold text-gray-800">Departamentos</h3>
+                        </div>
+                        <div class="category-card bg-white p-6 rounded-lg border-2 border-transparent cursor-pointer text-center" data-category="academico">
+                            <i data-lucide="graduation-cap" class="mx-auto h-12 w-12 text-blue-600 mb-4"></i>
+                            <h3 class="text-xl font-bold text-gray-800">Acadêmico e Extensão</h3>
+                        </div>
+                        <div class="category-card bg-white p-6 rounded-lg border-2 border-transparent cursor-pointer text-center" data-category="coord_enfermagem_caseu">
+                            <i data-lucide="heart-pulse" class="mx-auto h-12 w-12 text-blue-600 mb-4"></i>
+                            <h3 class="text-xl font-bold text-gray-800">Coordenação de Enfermagem e CASEU</h3>
+                        </div>
+                        <div class="category-card bg-white p-6 rounded-lg border-2 border-transparent cursor-pointer text-center" data-category="infraestrutura_oficina">
+                            <i data-lucide="wrench" class="mx-auto h-12 w-12 text-blue-600 mb-4"></i>
+                            <h3 class="text-xl font-bold text-gray-800">Infraestrutura e Oficina</h3>
+                        </div>
+                         <div class="category-card bg-white p-6 rounded-lg border-2 border-transparent cursor-pointer text-center" data-category="biblioteca">
+                            <i data-lucide="book-marked" class="mx-auto h-12 w-12 text-blue-600 mb-4"></i>
+                            <h3 class="text-xl font-bold text-gray-800">Biblioteca</h3>
+                        </div>
+                        <div class="category-card bg-white p-6 rounded-lg border-2 border-transparent cursor-pointer text-center" data-category="administrativo">
+                            <i data-lucide="briefcase" class="mx-auto h-12 w-12 text-blue-600 mb-4"></i>
+                            <h3 class="text-xl font-bold text-gray-800">Administrativo</h3>
+                        </div>
+                    </div>
+
+                    <!-- Container para Subcategorias (inicialmente oculto) -->
+                    <div id="subcategories-container" class="hidden mt-8">
+                        <button id="back-to-categories" class="flex items-center font-semibold text-blue-600 hover:text-blue-800 mb-6">
+                            <i data-lucide="arrow-left" class="mr-2 h-5 w-5"></i>
+                            Voltar para Categorias
+                        </button>
+                        <div id="subcategories-list" class="space-y-3">
+                            <!-- Acordeão de subcategorias ou lista direta será inserido aqui pelo JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Dúvidas Frequentes -->
+        <section id="faq" class="py-20 bg-blue-50">
+            <div class="container mx-auto px-6">
+                 <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold section-title inline-block">Principais Dúvidas do Inventário</h2>
+                    <p class="text-gray-600 mt-4 max-w-3xl mx-auto">Clique nos cartões abaixo para ver as instruções para as situações mais comuns</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto" id="faq-cards-container">
+                    <!-- Card 1 -->
+                    <div class="faq-card bg-white p-6 rounded-lg border border-gray-200 shadow-sm cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center text-center h-56" data-faq-id="1">
+                        <i data-lucide="search-slash" class="w-12 h-12 text-blue-600 mb-4"></i>
+                        <h3 class="font-bold text-lg px-4">BENS NÃO LOCALIZADOS</h3>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="faq-card bg-white p-6 rounded-lg border border-gray-200 shadow-sm cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center text-center h-56" data-faq-id="2">
+                        <i data-lucide="plus-circle" class="w-12 h-12 text-blue-600 mb-4"></i>
+                        <h3 class="font-bold text-lg px-4">BENS NÃO LOCALIZADOS NA LISTAGEM</h3>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="faq-card bg-white p-6 rounded-lg border border-gray-200 shadow-sm cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center text-center h-56" data-faq-id="3">
+                        <i data-lucide="user-x" class="w-12 h-12 text-blue-600 mb-4"></i>
+                        <h3 class="font-bold text-lg px-4">BENS PARTICULARES</h3>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="faq-card bg-white p-6 rounded-lg border border-gray-200 shadow-sm cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center text-center h-56" data-faq-id="4">
+                        <i data-lucide="x-circle" class="w-12 h-12 text-blue-600 mb-4"></i>
+                        <h3 class="font-bold text-lg px-4">BENS SEM PLAQUETA</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Guias e Tutoriais -->
+        <section id="guias" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                     <h2 class="text-3xl font-bold section-title inline-block">Guias e Formulários</h2>
+                    <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Acesse materiais de apoio para auxiliar no processo de conferência</p>
+                </div>
+                <div class="max-w-3xl mx-auto">
+                    <div class="space-y-4">
+                        <a href="https://drive.google.com/file/d/14_j3exZJ1yQi88Sg-zrR9hLeT55isdEo/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="flex items-center bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition group border">
+                            <i data-lucide="file-text" class="text-blue-600 mr-4 h-8 w-8"></i>
+                            <div>
+                                <span class="font-semibold text-lg text-gray-800">Guia Rápido do Inventário</span>
+                                <p class="text-gray-600">Um passo a passo simplificado para a conferência</p>
+                            </div>
+                            <i data-lucide="download" class="ml-auto text-gray-500 group-hover:text-blue-700"></i>
+                        </a>
+                        <a href="https://drive.google.com/file/d/1fAVulU6TlZ0AkVgoxckMvpIOCh6FcHem/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="flex items-center bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition group border">
+                            <i data-lucide="book-open" class="text-blue-600 mr-4 h-8 w-8"></i>
+                            <div>
+                                <span class="font-semibold text-lg text-gray-800">Formulários para Bens Existentes e Particulares</span>
+                                <p class="text-gray-600">ATENÇÃO: Preencha esses formulários somente se houve atualização referente ao ano de 2024</p>
+                            </div>
+                            <i data-lucide="download" class="ml-auto text-gray-500 group-hover:text-blue-700"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção da Comissão -->
+        <section id="comissao" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold section-title inline-block">Membros de Referência da Comissão</h2>
+                    <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Encontre o membro da comissão responsável por auxiliar o seu setor.</p>
+                </div>
+                <div class="max-w-4xl mx-auto space-y-4">
+                    <!-- Membro 1 -->
+                    <div class="bg-white p-5 rounded-lg shadow-sm border flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-800">Profa. Leniana Santos</h3>
+                            <p class="text-gray-600">Referência para: Odontologia Restauradora</p>
+                        </div>
+                        <a href="mailto:leniananeves@gmail.com" class="mt-2 sm:mt-0 inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold">
+                            <i data-lucide="mail" class="mr-2 h-4 w-4"></i>
+                            leniananeves@gmail.com
+                        </a>
+                    </div>
+                    <!-- Membro 2 -->
+                    <div class="bg-white p-5 rounded-lg shadow-sm border flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-800">Profa. Rosa Núbia Vieira de Moura</h3>
+                            <p class="text-gray-600">Referência para: Odontologia Social e Preventiva</p>
+                        </div>
+                        <a href="mailto:bdmoura96@gmail.com" class="mt-2 sm:mt-0 inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold">
+                            <i data-lucide="mail" class="mr-2 h-4 w-4"></i>
+                            bdmoura96@gmail.com
+                        </a>
+                    </div>
+                    <!-- Membro 3 -->
+                    <div class="bg-white p-5 rounded-lg shadow-sm border flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-800">Prof. Maurício de Castro Aquino de Castro</h3>
+                            <p class="text-gray-600">Referência para: Clínica Patologia e Cirurgias Odontológicas</p>
+                        </div>
+                        <a href="mailto:mauricioaacastro@gmail.com" class="mt-2 sm:mt-0 inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold">
+                            <i data-lucide="mail" class="mr-2 h-4 w-4"></i>
+                            mauricioaacastro@gmail.com
+                        </a>
+                    </div>
+                    <!-- Membro 4 -->
+                    <div class="bg-white p-5 rounded-lg shadow-sm border flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-800">Profa. Joana Ramos Jorge</h3>
+                            <p class="text-gray-600">Referência para: Saúde Bucal da Criança e do Adolescente</p>
+                        </div>
+                        <a href="mailto:joanaramosjorge@gmail.com" class="mt-2 sm:mt-0 inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold">
+                            <i data-lucide="mail" class="mr-2 h-4 w-4"></i>
+                            joanaramosjorge@gmail.com
+                        </a>
+                    </div>
+                    <!-- Membro 5 -->
+                    <div class="bg-white p-5 rounded-lg shadow-sm border flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-800">Larissa Carvalho Puglielli</h3>
+                            <p class="text-gray-600">Referência para: Setores Administrativos</p>
+                        </div>
+                        <a href="mailto:larissacpuglielli@eba.ufmg.br" class="mt-2 sm:mt-0 inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold">
+                            <i data-lucide="mail" class="mr-2 h-4 w-4"></i>
+                            larissacpuglielli@eba.ufmg.br
+                        </a>
+                    </div>
+                    <!-- Membro 6 -->
+                    <div class="bg-white p-5 rounded-lg shadow-sm border flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-800">Bárbara Soares</h3>
+                            <p class="text-gray-600">Referência para: Setores Administrativos</p>
+                        </div>
+                        <a href="mailto:spatr@odonto.ufmg.br" class="mt-2 sm:mt-0 inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold">
+                            <i data-lucide="mail" class="mr-2 h-4 w-4"></i>
+                            spatr@odonto.ufmg.br
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Contato -->
+        <section id="contato" class="py-20 bg-blue-800 text-white">
+            <div class="container mx-auto px-6 text-center">
+                 <h2 class="text-3xl font-bold mb-4">Ainda com Dúvidas?</h2>
+                <p class="text-blue-200 mb-8 max-w-2xl mx-auto">Entre em contato diretamente com a Seção de Patrimônio. Estamos à disposição para auxiliar.</p>
+                <div class="flex flex-wrap justify-center gap-8">
+                    <div class="flex items-center space-x-3">
+                        <i data-lucide="mail"></i>
+                        <a href="mailto:spatr@odonto.ufmg.br" class="hover:underline">spatr@odonto.ufmg.br</a>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <i data-lucide="phone"></i>
+                        <span>(31) 3409-2458</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <p>&copy; 2025 Seção de Patrimônio - Faculdade de Odontologia da UFMG</p>
+            <p class="text-sm text-gray-400 mt-2">Desenvolvido para modernizar a gestão patrimonial</p>
+        </div>
+    </footer>
+
+    <!-- Modal de Dúvidas Frequentes -->
+    <div id="faq-modal" class="fixed inset-0 bg-black bg-opacity-60 backdrop-blur-sm flex justify-center items-center p-4 z-[100] hidden">
+        <div id="faq-modal-content" class="bg-white rounded-lg shadow-xl max-w-lg w-full p-8 relative transform transition-all duration-300 scale-95 opacity-0">
+            <button id="modal-close-btn" class="absolute top-4 right-4 text-gray-400 hover:text-gray-800">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <div class="flex items-center mb-4">
+                 <div id="modal-icon-container" class="bg-blue-100 p-3 rounded-full mr-4">
+                    <!-- Icon will be inserted here -->
+                 </div>
+                <h3 id="modal-title" class="text-2xl font-bold text-gray-800"></h3>
+            </div>
+            <p id="modal-text" class="text-gray-600"></p>
+        </div>
+    </div>
+
+    <script>
+        // Ícones Lucide
+        lucide.createIcons();
+
+        // Menu Mobile
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Dados para os relatórios
+        const reportsData = [
+            // Departamentos
+            { id: 66, responsible: 'PROFA. SORAIA MACARI', location: 'SALA 3108 – ORTODONTIA', mainCategory: 'departamentos', subCategory: 'Saúde Bucal da Criança e do Adolescente', reportUrl:'https://drive.google.com/file/d/1K0l-GHvhQUE9GSql1YjswqA7ucHTkAWY/view?usp=drive_link', termUrl: '#' },
+            { id: 67, responsible: 'PROFA. CRISTIANE BACCIN BENDO NEVES', location: 'SALA 3306 – CHEFIA SCA', mainCategory: 'departamentos', subCategory: 'Saúde Bucal da Criança e do Adolescente', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-3306-CHEFIA-DEPARTAMENTO-SCA-CRISTIANE-BACCIN-BENDO-NEVES.pdf', termUrl: '#' },
+            { id: 68, responsible: 'RICARDO DIAS LUZ', location: 'SALA 3307 – SECRETARIA SCA', mainCategory: 'departamentos', subCategory: 'Saúde Bucal da Criança e do Adolescente', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-3307-SECRETARIA-SCA-RICARDO-DIAS-LUZ.pdf', termUrl: '#' },
+            { id: 69, responsible: 'PROFA. RAQUEL GONCALVES VIEIRA DE ANDRADE', location: 'SALA 3317 – GABINETE DE PROFESSOR 1', mainCategory: 'departamentos', subCategory: 'Saúde Bucal da Criança e do Adolescente', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-3317-GABINETE-DE-PROFESSOR-1-RAQUEL-GONCALVES-VIEIRA-DE-ANDRADE.pdf', termUrl: '#' },
+            { id: 70, responsible: 'PROFA. SHEYLA MARCIA AUAD', location: 'SALA 3319 – GABINETE DE PROFESSOR 2', mainCategory: 'departamentos', subCategory: 'Saúde Bucal da Criança e do Adolescente', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-3319-GABINETE-DE-PROFESSOR-2-SHEYLA-MARCIA-AUAD.pdf', termUrl: '#' },
+            { id: 71, responsible: 'PROFA. ISABELA ALMEIDA PORDEUS', location: 'SALA 3320 – GABINETE DE PROFESSOR 3', mainCategory: 'departamentos', subCategory: 'Saúde Bucal da Criança e do Adolescente', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-3320-GABINETE-DE-PROFESSOR-3-ISABELA-ALMEIDA-PORDEUS.pdf', termUrl: '#' },
+            { id: 72, responsible: 'PROFA. IZABELLA BARBOSA FERNANDES', location: 'SALA 3322 – GABINETE DE PROFESSOR 4', mainCategory: 'departamentos', subCategory: 'Saúde Bucal da Criança e do Adolescente', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-3322-GABINETE-DE-PROFESSOR-4-IZABELLA-BARBOSA-FERNANDES.pdf', termUrl: '#' },
+            { id: 154, responsible: 'Profa. Leniana Santos Neves', location: 'Clínica 08 - Almoxarifado 02 - Ortodontia', mainCategory: 'departamentos', subCategory: 'Saúde Bucal da Criança e do Adolescente', reportUrl: 'https://drive.google.com/file/d/1JVud3xhtX6yWpanjLOeJwretGvIdRB-L/view?usp=sharing', termUrl: '#' },
+            { id: 155, responsible: 'Profa. Leniana Santos Neves', location: 'Sala 0000 - Laboratório de Apoio a Ortodontia', mainCategory: 'departamentos', subCategory: 'Saúde Bucal da Criança e do Adolescente', reportUrl: 'https://drive.google.com/file/d/1cTeeKl8FspvHwDKn5HAqD9dN_LjYDa6S/view?usp=drive_link', termUrl: '#' },
+            { id: 156, responsible: 'Profa. Joana Ramos Jorge', location: 'Sala 2608 - Clínica de Odontopediatria e Ortodontia', mainCategory: 'departamentos', subCategory: 'Saúde Bucal da Criança e do Adolescente', reportUrl: 'https://drive.google.com/file/d/1u1Ga4gxPMegarCQk6hmsvH1BUYzgv3jD/view?usp=drive_link', termUrl: '#' },
+            { id: 157, responsible: 'Prof. Rodrigo Hermont Cançado', location: 'Sala 3107 - Laboratório de Ensino 04 - Ortodontia', mainCategory: 'departamentos', subCategory: 'Saúde Bucal da Criança e do Adolescente', reportUrl: 'https://drive.google.com/file/d/1PihBN1NtkVsTSHvxrQ21QvWMwSfrcY-U/view?usp=drive_link', termUrl: '#' },
+            { id: 59, responsible: 'PROFA. CAMILLA APARECIDA SILVA DE OLIVEIRA LIMA', location: 'SALA 3303 – GABINETE DE PROFESSOR', mainCategory: 'departamentos', subCategory: 'Odontologia Social Preventiva', reportUrl: 'https://drive.google.com/file/d/1_4UJHrTj-HrjSzYDkUj_pX-hTEZyeP-Z/view?usp=drive_link', termUrl: '#' },
+            { id: 60, responsible: 'PROFA. ANA CRISTINA BORGES DE OLIVEIRA', location: 'SALA 3314 – GABINETE DE PROFESSORES 04', mainCategory: 'departamentos', subCategory: 'Odontologia Social Preventiva', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-3314-GABINETE-DE-PROFESSORES-04-ANA-CRISTINA-BORGES-DE-OLIVEIRA.pdf', termUrl: '#' },
+            { id: 61, responsible: 'PROFA. SUELLEN DA ROCHA MENDES', location: 'SALA 3325 – GABINETE DE PROFESSOR 01', mainCategory: 'departamentos', subCategory: 'Odontologia Social Preventiva', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-3325-GABINETE-DE-PROFESSORES-01-SUELLEN-DA-ROCHA-MENDES.pdf', termUrl: '#' },
+            { id: 62, responsible: 'PROFA. VIVIANE ELISANGELA GOMES', location: 'SALA 3326 – GABINETE DE PROFESSORES 02', mainCategory: 'departamentos', subCategory: 'Odontologia Social Preventiva', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-3326-GABINETE-DE-PROFESSORES-02-VIVIANE-ELISANGELA-GOMES.pdf', termUrl: '#' },
+            { id: 63, responsible: 'PROFA. JANICE SIMPSON DE PAULA', location: 'SALA 3327 – GABINETE DE PROFESsores 03', mainCategory: 'departamentos', subCategory: 'Odontologia Social Preventiva', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-3327-GABINETE-DE-PROFESSORES-03-JANICE-SIMPSON-DE-PAULA.pdf', termUrl: '#' },
+            { id: 64, responsible: 'PROFA. ANDREIA MARIA ARAÚJO DRUMMOND', location: 'LABORATÓRIO DE PESQUISA DOSP', mainCategory: 'departamentos', subCategory: 'Odontologia Social Preventiva', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/LABORATORIO-DE-PESQUISA-DOSP-ANDREIA-MARIA-ARAUJO-DRUMMOND.pdf', termUrl: '#' },
+            { id: 65, responsible: 'PROF. FLÁVIO DE FREITAS MATTOS', location: 'SALA 3304 - CHEFIA OSP/SEC/ESTÁGIO SUPERVISIONA', mainCategory: 'departamentos', subCategory: 'Odontologia Social Preventiva', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-3304-CHEFIA-OSP_SEC_ESTAGIO-SUPERVISIONA-FLAVIO-DE-FREITAS-MATTOS.pdf', termUrl: '#' },
+            { id: 73, responsible: 'PROFA. SORAIA MACARI', location: 'SALA 3101 – LABORATÓRIO – FREEZER', mainCategory: 'departamentos', subCategory: 'Odontologia Restauradora', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-3101-LABORATORIO-FREEZER-SORAIA-MACARI.pdf', termUrl: '#' },
+            { id: 74, responsible: 'PROFA. IVANA MARCIA ALVES DINIZ', location: 'SALA 3102 – LABORATÓRIO CULTURA DE CÉLULAS', mainCategory: 'departamentos', subCategory: 'Odontologia Restauradora', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-3102-LABORATORIO-CULTURA-DE-CELULAS-IVANA-MARCIA-ALVES-DINIZ.pdf', termUrl: '#' },
+            { id: 75, responsible: 'PROFA. MARIA ESPERANZA CORTES SEGURA', location: 'SALA 3103 – LABORATÓRIO DE PESQUISA 3', mainCategory: 'departamentos', subCategory: 'Odontologia Restauradora', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-3103-LABORATORIO-DE-PESQUISA-3-MARIA-ESPERANZA-CORTES-SEGURA.pdf', termUrl: '#' },
+            { id: 76, responsible: 'PROFA. ROGELI TIBURCIO RIBEIRO DA CUNHA PEIXOTO', location: 'SALA 3104 – LABORATÓRIO MULTIDISCIPLINAR 01', mainCategory: 'departamentos', subCategory: 'Odontologia Restauradora', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-3104-LABORATORIO-MULTIDISCIPLINAR-01-ROGELI-TIBURCIO-RIBEIRO-DA-CUNHA-PEIXOTO.pdf', termUrl: '#' },
+            { id: 77, responsible: 'PROF. DANILO ROCHA DIAS', location: 'SALA 3301 – GABINETE DE PROFESSOR 01', mainCategory: 'departamentos', subCategory: 'Odontologia Restauradora', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/002-SALA-3301-GABINETE-DE-PROFESSOR-01-DANILO-ROCHA-DIAS.pdf', termUrl: '#' },
+            { id: 78, responsible: 'PROFA. JULIANA VILELA BASTOS', location: 'SALA 3308 – CHEFIA_SECRETARIA ODR', mainCategory: 'departamentos', subCategory: 'Odontologia Restauradora', reportUrl:'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-3308-CHEFIA_SECRETARIA-ODR-JULIANA-VILELA-BASTOS.pdf', termUrl: '#' },
+            { id: 79, responsible: 'PROFA. RAFAELA DA SILVEIRA PINTO', location: 'SALA 3336 – GABINETE DE PROFESSOR 02', mainCategory: 'departamentos', subCategory: 'Odontologia Restauradora', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-3336-GABINETE-DE-PROFESSOR-02-RAFAELA-DA-SILVEIRA-PINTO.pdf', termUrl:'#'},
+            { id: 80, responsible: 'PROFA. ANA CECILIA DINIZ VIANA', location: 'SALA 3337 – GABINETE DE PROFESSORES 03', mainCategory: 'departamentos', subCategory: 'Odontologia Restauradora', reportUrl:'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-3337-GABINETE-DE-PROFESSORES-03-ANA-CECILIA-DINIZ-VIANA.pdf', termUrl: '#' },
+            { id: 81, responsible: 'PROFA. MARCOS DANIEL SEPTIMIO LANZA', location: 'SALA 3338 – GABINETE DE PROFESSOR 04', mainCategory: 'departamentos', subCategory: 'Odontologia Restauradora', reportUrl:'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-3338-GABINETE-DE-PROFESSOR-04-MARCOS-DANIEL-SEPTIMIO-LANZA.pdf', termUrl: '#' },
+            { id: 82, responsible: 'PROFA. ROGELI TIBURCIO RIBEIRO DA CUNHA PEIXOTO', location: 'SALA 3339 – GABINETE DE PROFESSOR 05', mainCategory: 'departamentos', subCategory: 'Odontologia Restauradora', reportUrl:'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-3339-GABINETE-DE-PROFESSOR-05-ROGELI-TIBURCIO-RIBEIRO-DA-CUNHA-PEIXOTO.pdf', termUrl: '#' },
+            { id: 83, responsible: 'PROFA. LIA SILVA DE CASTILHO', location: 'SALA 3340 – GABINETE DE PROFESSOR 06', mainCategory: 'departamentos', subCategory: 'Odontologia Restauradora', reportUrl:'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-3340-GABINETE-DE-PROFESSOR-06-LIA-SILVA-DE-CASTILHO.pdf', termUrl: '#' },
+            { id: 84, responsible: 'PROFA. ISABELLA FARIA DA CUNHA PEIXOTO', location: 'SALA 3341 – GABINETE DE PROFESSOR 07', mainCategory: 'departamentos', subCategory: 'Odontologia Restauradora', reportUrl:'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-3341-GABINETE-DE-PROFESSOR-07-ISABELLA-FARIA-DA-CUNHA-PEIXOTO.pdf', termUrl: '#' },
+            { id: 85, responsible: 'PROFA. LIVIA FAVARO ZEOLA', location: 'SALA 3342 – GABINETE DE PROFESSOR 08', mainCategory: 'departamentos', subCategory: 'Odontologia Restauradora', reportUrl:'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-3342-GABINETE-DE-PROFESSOR-08-LIVIA-FAVARO-ZEOLA.pdf', termUrl:'#' },
+            { id: 86, responsible: 'PROFA. MARIA ESPERANZA CORTES SEGURA', location: 'SALA 3343 – GABINETE DE PROFESSOR 09', mainCategory: 'departamentos', subCategory: 'Odontologia Restauradora', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-3343-GABINETE-DE-PROFESSOR-09-MARIA-ESPERANZA-CORTES-SEGURA.pdf', termUrl: '#' },
+            { id: 87, responsible: 'PROFA. PATRICIA VALENTE ARAUJO', location: 'SALA 3344 – GABINETE DE PROFESSOR 10', mainCategory: 'departamentos', subCategory: 'Odontologia Restauradora', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-3344-GABINETE-DE-PROFESSOR-10-RODRIGO-KEIGO-LOPES-NAKAGAWA.pdf', termUrl: '#' },
+            { id: 88, responsible: 'PROF. JOSE AUGUSTO CESAR DISCACCATI', location: 'SALA 3345 – GABINETE DE PROFESSOR 11', mainCategory: 'departamentos', subCategory: 'Odontologia Restauradora', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-3345-GABINETE-DEPROFESSOR-11-JOSE-AUGUSTO-CESAR-DISCACCIATI.pdf', termUrl: '#' },
+            { id: 89, responsible: 'PROFA. CAROLINA BOSSO ANDRE', location: 'SALA 3404 – LABORATÓRIO DE PESQUISA DE MATERIAIS', mainCategory: 'departamentos', subCategory: 'Odontologia Restauradora', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-3404-LABORATORIO-DE-PESQUISA-DE-MATERIAIS-CAROLINA-BOSSO-ANDRE.pdf', termUrl: '#' },
+            { id: 90, responsible: 'PROFA. MARIA CASSIA FERREIRA DE AGUIAR', location: 'SALA 3201 – LAB. DE PATOLOGIA EXPERIMENTAL 1', mainCategory: 'departamentos', subCategory: 'Clínica Patologia e Cirurgia Odontológica', reportUrl: 'https://drive.google.com/file/d/1yTohZ9t3nxF1yR-XQBss4EI2UmxbFE71/view?usp=drive_link', termUrl: '#' },
+            { id: 91, responsible: 'PROF. RICARDO ALVES DE MESQUITA', location: 'SALA 3202 – SALA DE ALUNOS', mainCategory: 'departamentos', subCategory: 'Clínica Patologia e Cirurgia Odontológica', reportUrl: 'https://drive.google.com/file/d/1YgwYSHZYTcsf-qmkZ_UWLVlFpdRCdhyy/view?usp=drive_link', termUrl: '#' },
+            { id: 92, responsible: 'DOMENICO ROMANO ROMANI', location: 'SALA 3202 A_B – LAB. DE PATOLOGIA CIRÚRGICA', mainCategory: 'departamentos', subCategory: 'Clínica Patologia e Cirurgia Odontológica', reportUrl: 'https://drive.google.com/file/d/1h8sj59PkTQuoDIyrpv9VgPUdVfl4vv-a/view?usp=drive_link', termUrl: '#' },
+            { id: 93, responsible: 'PROFA. SILVIA FERREIRA DE SOUSA', location: 'SALA 3203 – LABORATÓRIO DE MICROBIOLOGIA', mainCategory: 'departamentos', subCategory: 'Clínica Patologia e Cirurgia Odontológica', reportUrl: 'https://drive.google.com/file/d/1gfZybGNZ2B31V5aikROmO-D77jFcm1V4/view?usp=drive_link', termUrl: '#' },
+            { id: 94, responsible: 'PROFA. TARCILIA APARECIDA DA SILVA', location: 'SALA 3204 – LAB. DE PATOLOGIA EXPERIMENTAL 3', mainCategory: 'departamentos', subCategory: 'Clínica Patologia e Cirurgia Odontológica', reportUrl: 'https://drive.google.com/file/d/1QL5CRp-QMKOwqkD5UKTS4l9T8cgcjwY9/view?usp=drive_link', termUrl: '#' },
+            { id: 95, responsible: 'PROF. RICARDO SANTIAGO GOMEZ', location: 'SALA 3205 – LABORATÓRIO DE BIOLOGIA MOLECULAR', mainCategory: 'departamentos', subCategory: 'Clínica Patologia e Cirurgia Odontológica', reportUrl: 'https://drive.google.com/file/d/1cFi1f41JDrOcZKu_O6z5F1xafAMRVVY0/view?usp=drive_link', termUrl: '#' },
+            { id: 96, responsible: 'PROFA. TANIA MARA PIMENTA AMARAL', location: 'SALA 3302 – GABINETE DE PROFESSOR 01', mainCategory: 'departamentos', subCategory: 'Clínica Patologia e Cirurgia Odontológica', reportUrl: 'https://drive.google.com/file/d/183igdNp6oNlUZ9Ke-79jFq5mjOQb1LR4/view?usp=drive_link', termUrl: '#' },
+            { id: 97, responsible: 'PROFA. CÉLIA REGINA MOREIRA LANZA', location: 'SALA 3305 – CHEFIA_SECRETARIA DEP. CPC', mainCategory: 'departamentos', subCategory: 'Clínica Patologia e Cirurgia Odontológica', reportUrl: '#', termUrl: '#' },
+            { id: 98, responsible: 'A DEFINIR', location: 'SALA 3308 – GABINETE DE PROFESSOR 8', mainCategory: 'departamentos', subCategory: 'Clínica Patologia e Cirurgia Odontológica', reportUrl: '#', termUrl: '#' },
+            { id: 99, responsible: 'PROF. LUIZ OTÁVIO DE MIRANDA COTA', location: 'SALA 3328 – GABINETE DE PROFESSOR 02', mainCategory: 'departamentos', subCategory: 'Clínica Patologia e Cirurgia Odontológica', reportUrl: 'https://drive.google.com/file/d/1tB6RstivXXo8pWTs8RlxZ-GPJMLNmQQv/view?usp=drive_link', termUrl: '#' },
+            { id: 100, responsible: 'PROF. MARCELO DRUMMOND NAVES', location: 'SALA 3329 – GABINETE DE PROFESSOR 03', mainCategory: 'departamentos', subCategory: 'Clínica Patologia e Cirurgia Odontológica', reportUrl: 'https://drive.google.com/file/d/1qRcdzpG8qcLEAtUNELO4t_tAUWdKkUi-/view?usp=drive_link', termUrl: '#' },
+            { id: 101, responsible: 'PROF. WAGNER HENRIQUES DE CASTRO', location: 'SALA 3330 – GABINETE DE PROFESSOR 04', mainCategory: 'departamentos', subCategory: 'Clínica Patologia e Cirurgia Odontológica', reportUrl: 'https://drive.google.com/file/d/1G4fTmFjAoRHHl6SxiY2vf2OsEK6Hw49c/view?usp=drive_link', termUrl: '#' },
+            { id: 102, responsible: 'PROF. LEANDRO NAPIER DE SOUZA', location: 'SALA 3331 – GABINETE DE PROFESSOR 05', mainCategory: 'departamentos', subCategory: 'Clínica Patologia e Cirurgia Odontológica', reportUrl: 'https://drive.google.com/file/d/1NCInBEOIJBxL0mbO95wtKjp9RSOuM3gY/view?usp=drive_link', termUrl: '#' },
+            { id: 103, responsible: 'PROFA. ALINE ARAÚJO SAMPAIO', location: 'SALA 3333 – GABINETE DE PROFESSOR 06', mainCategory: 'departamentos', subCategory: 'Clínica Patologia e Cirurgia Odontológica', reportUrl: 'https://drive.google.com/file/d/1dgkTKLEJOxvnKSVwT-4CNkqR-IQiXcP-/view?usp=drive_link', termUrl: '#' },
+            { id: 104, responsible: 'PROF. FABIANO ARAUJO CUNHA', location: 'SALA 3334 – GABINETE DE PROFESSOR 07', mainCategory: 'departamentos', subCategory: 'Clínica Patologia e Cirurgia Odontológica', reportUrl: 'https://drive.google.com/file/d/1KCtEud_h-oOkqsDyB6tlB5AK5TmWY8zU/view?usp=drive_link', termUrl: '#' },
+            { id: 105, responsible: 'DOMENICO ROMANO', location: 'SALA 1018 – ARQUIVO DE LÂMINAS', mainCategory: 'departamentos', subCategory: 'Clínica Patologia e Cirurgia Odontológica', reportUrl: 'https://drive.google.com/file/d/1mqJ9PZUibayldMlBw2f7oWzRqFAo72CM/view?usp=drive_link', termUrl: '#' },
+            
+            // Acadêmico e Extensão
+            { id: 42, responsible: 'PROF. LUCAS GUIMARÃES ABREU', location: 'SALA 2909A', mainCategory: 'academico', subCategory: 'Colegiado de Graduação', reportUrl: '#', termUrl: '#' },
+            { id: 43, responsible: 'PROF. LUCAS GUIMARÃES ABREU', location: 'SALA 2909 – COLEGIADO DE GRADUAÇÃO', mainCategory: 'academico', subCategory: 'Colegiado de Graduação', reportUrl: '#', termUrl: '#' },
+            { id: 44, responsible: 'PROF. LUCAS GUIMARÃES ABREU', location: 'SALA 2912 – NDE', mainCategory: 'academico', subCategory: 'Colegiado de Graduação', reportUrl: '#', termUrl: '#' },
+            { id: 45, responsible: 'ALAN FELIPE SOUZA', location: 'SALA 2913 – NEPPO', mainCategory: 'academico', subCategory: 'Colegiado de Graduação', reportUrl: '#', termUrl: '#' },
+            { id: 46, responsible: 'PROFA. ISABELLA FARIA DA CUNHA PEIXOTO', location: 'SALA 2301 – CLÍNICA 7 – PÓS GRADUAÇÃO', mainCategory: 'academico', subCategory: 'Colegiado de Pós-Graduação', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-2301-CLINICA-7-POS-GRADUACAO-ISABELLA-FARIA-DA-CUNHA-PEIXOTO.pdf', termUrl: '#' },
+            { id: 47, responsible: 'PROF. MAURO HENRIQUE NOGUEIRA', location: 'SALA 3309 – CHEFIA DO COLEGIADO E PÓS GRADUAÇÃO', mainCategory: 'academico', subCategory: 'Colegiado de Pós-Graduação', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-3309-CHEFIA-DO-COLEGIADODE-POS-GRADUACAO-MAURO-HENRIQUE-NOGUEIRA-GUIMARAES-DE-ABREU.pdf', termUrl: '#' },
+            { id: 48, responsible: 'PROF. MAURO HENRIQUE NOGUEIRA GUIMARAES DE ABREU', location: 'SALA 3310 – SECRETARIA DO COL. DE PÓS GRADUAÇÃO', mainCategory: 'academico', subCategory: 'Colegiado de Pós-Graduação', reportUrl:'https://drive.google.com/file/d/11qyP9kt7n8uBxfbOHO74n3Mpd5nQHty7/view?usp=drive_link', termUrl:'#'},
+            { id: 49, responsible: 'PROF. MAURO HENRIQUE NOGUEIRA GUIMARAES DE ABREU', location: 'SALA 3311 – PÓS-DOUTORADO E REVISTA', mainCategory: 'academico', subCategory: 'Colegiado de Pós-Graduação', reportUrl: 'https://drive.google.com/file/d/18aJrXOnaO9F_jWnD3i29Er1jMCLWClEZ/view?usp=drive_link', termUrl: '#'},
+            { id: 50, responsible: 'PROF. MAURO HENRIQUE NOGUEIRA GUIMARAES DE ABREU', location: 'SALA 3312 – RECEPÇÃO COL. PÓS GRADUAÇÃO E NAPQ', mainCategory: 'academico', subCategory: 'Colegiado de Pós-Graduação', reportUrl:'https://drive.google.com/file/d/1iJSwGr0AoTycyysR-w9Yuvng_6rNqF89/view?usp=drive_link', termUrl: '#' },
+            { id: 51, responsible: 'PROF. FELIPE PAIVA FONSECA', location: 'SALA 3313 – SALA DE ESTUDOS 01 – PÓS GRADUAÇÃO', mainCategory: 'academico', subCategory: 'Colegiado de Pós-Graduação', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-3313-SALA-DE-ESTUDOS-01-POS-GRADUACAO-FELIPE-PAIVA-FONSECA.pdf', termUrl: '#' },
+            { id: 52, responsible: 'PROFA. IVANA MARCIA ALVES DINIZ', location: 'SALA 3315 – SALA DE ESTUDOS 02 – PÓS GRADUAÇÃO', mainCategory: 'academico', subCategory: 'Colegiado de Pós-Graduação', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-3315-SALA-DE-ESTUDOS-02-POS-GRADUACAO-IVANA-MARCIA-ALVES-DINIZ.pdf', termUrl: '#' },
+            { id: 53, responsible: 'PROF. LUIS OTAVIO DE MIRANDA COTA', location: 'SALA 3316 – SALA DE ESTUDOS 03 – PÓS GRADUAÇÃO', mainCategory: 'academico', subCategory: 'Colegiado de Pós-Graduação', reportUrl:'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-3316-SALA-DE-ESTUDOS-03-POS-GRADUACAO-LUIS-OTAVIO-DE-MIRANDA-COTA.pdf', termUrl: '#' },
+            { id: 54, responsible: 'PROF. SAUL MARTINS DE PAIVA', location: 'SALA 3318 – SALA DE ESTUDOS 04 – PÓS GRADUAÇÃO', mainCategory: 'academico', subCategory: 'Colegiado de Pós-Graduação', reportUrl:'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-3318-SALA-DE-ESTUDOS-04-POS-GRADUACAO-SAUL-MARTINS-DE-PAIVA.pdf', termUrl: '#' },
+            { id: 55, responsible: 'PROF. MAURO HENRIQUE NOGUEIRA GUIMARAES DE ABREU', location: 'SALA 3323 – ALMOXARIFADO COLEGIado PÓS GRADUAÇÃO', mainCategory: 'academico', subCategory: 'Colegiado de Pós-Graduação', reportUrl:'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-3323-ALMOXARIFADO-COLEGIADO-POS-GRADUACAO-MAURO-HENRIQUE-NOGUEIRA-GUIMARAES-DE-ABREU.pdf', termUrl: '#' },
+            { id: 56, responsible: 'PROF. MAURO HENRIQUE NOGUEIRA GUIMARAES DE ABREU', location: 'SALA 3403 – MULTIMEIOS', mainCategory: 'academico', subCategory: 'Colegiado de Pós-Graduação', reportUrl: 'https://drive.google.com/file/d/159n5GycaL2bPEaWXV4YKwOBimtpwSmWe/view?usp=drive_link', termUrl: '#' },
+            { id: 57, responsible: 'PROF. MAURO HENRIQUE NOGUEIRA GUIMARAES DE ABREU', location: 'SALA 3412 – SALA DE AULA – PÓS GRADUAÇÃO', mainCategory: 'academico', subCategory: 'Colegiado de Pós-Graduação', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-3412-SALA-DE-AULA-POS-GRADUACAO-MAURO-HENRIQUE-NOGUEIRA-GUIMARAES-DE-ABREU.pdf', termUrl: '#' },
+            { id: 58, responsible: 'PROF. MAURO HENRIQUE NOGUEIRA GUIMARAES DE ABREU', location: 'SALA 3418 – SALA DE AULA PÓS GRADUAÇÃO', mainCategory: 'academico', subCategory: 'Colegiado de Pós-Graduação', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-3418-SALA-DE-AULA-POS-GRADUACAO-MAURO-HENRIQUE-NOGUEIRA-GUIMARAES-DE-ABREU.pdf', termUrl: '#' },
+            { id: 6, responsible: 'LILIAN SIMONI SIDNEY', location: 'SALA 2917 – SECRETARIA DO CENTRO DE EXTENSÃO', mainCategory: 'academico', subCategory: 'CENEX', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-2917-SECRETARIA-DO-CENTRO-DE-EXTENSAO-LILIAN-SIMONI-SIDNEY.pdf', termUrl: '#' },
+            { id: 41, responsible: 'PROFA. RENATA M. CYRINO', location: 'SALA 2918 – COORDENAÇÃO DO CENTRO DE EXTENSÃO', mainCategory: 'academico', subCategory: 'CENEX', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-2918-COORDENACAO-DO-CENTRO-DE-EXTENSAO-RENATA-MAGALHAES-CYRINO.pdf', termUrl: '#' },
+
+            // Coordenação de Enfermagem e CASEU
+            { id: 106, responsible: 'ARIANA LUIZA CAMPOS CORDEIRO', location: 'CLÍNICA 1', mainCategory: 'coord_enfermagem_caseu', subCategory: 'Clínicas', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/CLINICA-01-ARIANA-LUIZA-CAMPOS-CORDEIRO.pdf' , termUrl: '#' },
+            { id: 107, responsible: 'DANIELA ALBANO DA CRUZ', location: 'CLINICA 2', mainCategory: 'coord_enfermagem_caseu', subCategory: 'Clínicas', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/CLINICA-02-DANIELA-ALBANO-DA-CRUZ.pdf', termUrl: '#' },
+            { id: 108, responsible: 'ELAINE DOS SANTOS BARBOSA CAJA', location: 'CLINICA 3', mainCategory: 'coord_enfermagem_caseu', subCategory: 'Clínicas', reportUrl:'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/CLINICA-03-ELAINE-DOS-SANTOS-BARBOSA-CAJA.pdf', termUrl: '#' },
+            { id: 109, responsible: 'ALESSANDRA FERNANDA MENDES SILVA', location: 'CLÍNICA 4', mainCategory: 'coord_enfermagem_caseu', subCategory: 'Clínicas', reportUrl:'https://drive.google.com/file/d/1CO2VcdaYOkSMx924zUBb_tpIUYtV4tPX/view?usp=drive_link', termUrl: '#' },
+            { id: 110, responsible: 'GRAZIELLE MIRANDA DE JESUS ABREU', location: 'CLÍNICA 5', mainCategory: 'coord_enfermagem_caseu', subCategory: 'Clínicas', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/CLINICA-05-GRAZIELLE-MIRANDA-DE-JESUS-ABREU.pdf', termUrl: '#' },
+            { id: 111, responsible: 'NEUZA APARECIDA SILVA E SOUZA', location: 'CLÍNICA 6', mainCategory: 'coord_enfermagem_caseu', subCategory: 'Clínicas', reportUrl:'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/CLINICA-06-NEUZA-APARECIDA-SILVA-E-SOUZA.pdf', termUrl: '#' },
+            { id: 112, responsible: 'ALDEIR PEREIRA RIGUETTE', location: 'SALA 1011_1012 – APOIO CME LAVANDERIA', mainCategory: 'coord_enfermagem_caseu', subCategory: 'Apoio CME e Logística', reportUrl:'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-1011_1012-APOIO-CME-LAVANDERIA-ALDEIR-PEREIRA-RIGUETTE.pdf', termUrl: '#' },
+            { id: 113, responsible: 'NILMA DE JESUS APOLINARIO', location: 'SALA 1016 – APOIO CME', mainCategory: 'coord_enfermagem_caseu', subCategory: 'Apoio CME e Logística', reportUrl: 'https://drive.google.com/file/d/1kSVP4tDkXmeBsYuGy_lCA3Uhsol7zQ-b/view?usp=drive_link', termUrl: '#' },
+            { id: 114, responsible: 'ALDEIR PEREIRA RIGUETTE', location: 'SALA 2112 – CME', mainCategory: 'coord_enfermagem_caseu', subCategory: 'Apoio CME e Logística', reportUrl:'#', termUrl: '#' },
+            { id: 115, responsible: 'ALINE DE CASSIA BAPTISTA CONTARINI', location: 'SALA 2201 – APOIO CME', mainCategory: 'coord_enfermagem_caseu', subCategory: 'Apoio CME e Logística', reportUrl: 'https://drive.google.com/file/d/1A60G083LreLXJR88olrfUD_lNe2DIvoV/view?usp=drive_link', termUrl: '#' },
+            { id: 116, responsible: 'ANTONIO ADAO ROSA', location: 'SALA 2203A – CENTRAL DE EQUIPAMENTOS', mainCategory: 'coord_enfermagem_caseu', subCategory: 'Apoio CME e Logística', reportUrl:'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-2203A-CENTRAL-DE-EQUIPAMENTOS-ANTONIO-ADAO-ROSA.pdf', termUrl: '#' },
+            { id: 117, responsible: 'MURILO MIRANDA QUEIROZ', location: 'SALA 2209D – ALMOXARIFADO CLÍNICA 03', mainCategory: 'coord_enfermagem_caseu', subCategory: 'Apoio CME e Logística', reportUrl:'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-2209D-ALMOXARIFADO-CLINICA-03-MURILO-MIRANDA-QUEIROZ.pdf', termUrl: '#' },
+            { id: 118, responsible: 'LUCIANA GUILHERME GONZAGA CARMO', location: 'SALA 2216A – ENTREPOSTO _MEDICAMENTOS', mainCategory: 'coord_enfermagem_caseu', subCategory: 'Apoio CME e Logística', reportUrl:'https://drive.google.com/file/d/10ada-dge8Ml7z_cWtwliPmK2UigMZ-h7/view?usp=drive_link', termUrl: '#' },
+            { id: 119, responsible: 'LORRAINE CRISTINA MARQUES DE QUEIROZ', location: 'SALA 2501A – ARSENAL – CME', mainCategory: 'coord_enfermagem_caseu', subCategory: 'Apoio CME e Logística', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/002-SALA-2501A-ARSENAL-CME-LORRAINE-CRISTINA-MARQUES-DE-QUEIROZ.pdf', termUrl: '#' },
+            { id: 120, responsible: 'PATRICIA DIAS SILVA MADUREIRA', location: 'SALA 2502_03_03A – APOIO CME – EXPURGO', mainCategory: 'coord_enfermagem_caseu', subCategory: 'Apoio CME e Logística', reportUrl: 'https://drive.google.com/file/d/1yahL7L1HXi7xePSEcbnQdn1GKjb3fq6m/view?usp=drive_link', termUrl: '#' },
+            { id: 121, responsible: 'ANA CRISTINA ROMA FIGUEIREDO', location: 'SALA 2212 – COORD TÉC DE ENF. E LOGÍSTICA CLÍN', mainCategory: 'coord_enfermagem_caseu', subCategory: 'Coordenação e Enfermagem', reportUrl: '#', termUrl: '#' },
+            { id: 122, responsible: 'ALESSANDRA SANTOS DA CUNHA', location: 'SALA 2801 – SALA DA ENFERMAGEM', mainCategory: 'coord_enfermagem_caseu', subCategory: 'Coordenação e Enfermagem', reportUrl:'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/2801-SALA-DA-ENFERMAGEM-ALESSANDRA-SANTOS-DA-CUNHA.pdf', termUrl: '#' },
+            { id: 146, responsible: 'KAMILLA FARIA MACIEL', location: 'SALA 2101B_2101C – CONSULTÓRIOS_EMERGÊNCIAS', mainCategory: 'coord_enfermagem_caseu', subCategory: 'CASEU', reportUrl:'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALAS-2101B_2101C-EMERGENCIAS-KAMILLA-FARIA-MACIEL.pdf', termUrl: '#' },
+            { id: 147, responsible: 'LUMENA THAIS VIMIEIRO MELO', location: 'SALA 2104 – CENTRAL DE ATENDIMENTO CASEU', mainCategory: 'coord_enfermagem_caseu', subCategory: 'CASEU', reportUrl:'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-2104-CENTRAL-DE-ATENDIMENTO-CASEU-LUMENA-THAIS-VIMIEIRO-MELO.pdf', termUrl: '#' },
+            { id: 148, responsible: 'SORAIA MACARI', location: 'SALA 2105 – NÚCLEO DE ORTODONTIA', mainCategory: 'coord_enfermagem_caseu', subCategory: 'CASEU', reportUrl:'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-2105-NUCLEO-DE-ORTODONTIA-SORAIA-MACARI.pdf', termUrl: '#' },
+            { id: 149, responsible: 'LUMENA THAIS VIMIEIRO MELO', location: 'SALA 2110 – SECRETARIA E PRODUTIVIDADE CASEU', mainCategory: 'coord_enfermagem_caseu', subCategory: 'CASEU', reportUrl:'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-2110-SECRETARIA-E-PRODUTIVIDADE-CASEU-LUMENA-THAIS-VIMIEIRO-MELO.pdf', termUrl: '#' },
+            { id: 150, responsible: 'PROFA. JULIANA VILELA BASTOS', location: 'SALA 2118C – TRAUMATISMO', mainCategory: 'coord_enfermagem_caseu', subCategory: 'CASEU', reportUrl:'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-2118-C-TRAUMATISMO-JULIANA-VILELA-BASTOS.pdf', termUrl: '#' },
+
+            // Infraestrutura e Oficina
+            { id: 123, responsible: 'CÂNDIDO DA PAIXÃO', location: 'TRANSPORTES', mainCategory: 'infraestrutura_oficina', reportUrl:'https://drive.google.com/file/d/1P1A7gu4D0gdvaaUW5yqiBMAC15korvfW/view?usp=sharing', termUrl: '#' },
+            { id: 124, responsible: 'LUIZ CARLOS DA SILVA', location: 'SALA 3410 – SALA DE AULA', mainCategory: 'infraestrutura_oficina', reportUrl:'https://drive.google.com/file/d/1bdy8TBfBzS1sICgxf5mQomiKbbQJ99Ab/view?usp=sharing', termUrl: '#' },
+            { id: 125, responsible: 'LUIZ CARLOS DA SILVA', location: 'SALA 2804 – VESTIARIO DE ALUNOS', mainCategory: 'infraestrutura_oficina', reportUrl: 'https://drive.google.com/file/d/1dDQi-IyQmZq10DR9QZTY10Of5WRkYZlo/view?usp=sharing', termUrl: '#' },
+            { id: 126, responsible: 'LUIZ CARLOS DA SILVA', location: 'SALA 3417 – SALA DE AULA', mainCategory: 'infraestrutura_oficina', reportUrl: '#', termUrl: '#' },
+            { id: 127, responsible: 'LUIZ CARLOS DA SILVA', location: 'SALA 3416 – SALA DE AULA', mainCategory: 'infraestrutura_oficina', reportUrl: 'https://drive.google.com/file/d/1NoPRkDloweGF8Rpr54ue0PEAdVfpffir/view?usp=sharing', termUrl: '#' },
+            { id: 128, responsible: 'LUIZ CARLOS DA SILVA', location: 'SALA 3415 – SALA DE AULA', mainCategory: 'infraestrutura_oficina', reportUrl: 'https://drive.google.com/file/d/1TXoqMmLXUte5KJFD34iZDE29HKrZxwKR/view?usp=sharing', termUrl: '#' },
+            { id: 129, responsible: 'LUIZ CARLOS DA SILVA', location: 'SALA 3414 – SALA DE AULA', mainCategory: 'infraestrutura_oficina', reportUrl: 'https://drive.google.com/file/d/14-0c17iZQ-l9jPHFS8yEGBHAuWpXsZXj/view?usp=sharing', termUrl: '#' },
+            { id: 130, responsible: 'LUIZ CARLOS DA SILVA', location: 'SALA 3409 – ESTUDO EM GRUPO 2', mainCategory: 'infraestrutura_oficina', reportUrl: 'https://drive.google.com/file/d/1x34T9CTHB-CYEMpvL7KlBmXEXX40UqT7/view?usp=sharing', termUrl: '#' },
+            { id: 131, responsible: 'LUIZ CARLOS DA SILVA', location: 'SALA 3408 – ESTUDO EM GRUPO 1', mainCategory: 'infraestrutura_oficina', reportUrl: 'https://drive.google.com/file/d/1oN8IPVzv5-q8s8uyeBRnep85MXNncoir/view?usp=sharing', termUrl: '#' },
+            { id: 132, responsible: 'LUIZ CARLOS DA SILVA', location: 'SALA 2923 – CHEFIA DE SERVIÇOS GERAIS', mainCategory: 'infraestrutura_oficina', reportUrl:'https://drive.google.com/file/d/1Lk624Yh3HpghPZoEMRrJMg3dJ3rA-kod/view?usp=sharing', termUrl: '#' },
+            { id: 133, responsible: 'LUIZ CARLOS DA SILVA', location: 'SALA 2914 – COPA DO 2º ANDAR', mainCategory: 'infraestrutura_oficina', reportUrl: 'https://drive.google.com/file/d/1IvePjyMTiPWy2aggpnMxYwg9NQPSkVlp/view?usp=sharing', termUrl: '#' },
+            { id: 134, responsible: 'LUIZ CARLOS DA SILVA', location: 'SALA 2906D - DIRETORIO ACADEMICO', mainCategory: 'infraestrutura_oficina', reportUrl: 'https://drive.google.com/file/d/1wPJHgRRMqrKHoVFEk9BrJB2iBp5rsub8/view?usp=sharing', termUrl: '#' },
+            { id: 135, responsible: 'LUIZ CARLOS DA SILVA', location: 'SALA 2901A – TELEFONIA SEGURANÇA', mainCategory: 'infraestrutura_oficina', reportUrl: 'https://drive.google.com/file/d/1UhiEq7YeDNBaDZuCXUuWasjYRIEwHhnz/view?usp=sharing', termUrl: '#' },
+            { id: 136, responsible: 'LUIZ CARLOS DA SILVA', location: 'SALA 2803 – VESTIÁRIO DE ALUNAS', mainCategory: 'infraestrutura_oficina', reportUrl: 'https://drive.google.com/file/d/11Qjd1IRQZXTyVy8yNU80VrjjDfUGqZ97/view?usp=sharing', termUrl: '#' },
+            { id: 137, responsible: 'LUIZ CARLOS DA SILVA', location: 'SALA 1021 – VESTIÁRIO DA LIMPEZA', mainCategory: 'infraestrutura_oficina', reportUrl: 'https://drive.google.com/file/d/1mhcj3wiJceYS0LqrfnjEI1jUmWFog_2o/view?usp=sharing', termUrl: '#' },
+            { id: 138, responsible: 'LUIZ CARLOS DA SILVA', location: 'SALA 1020 – COPA 1º ANDAR', mainCategory: 'infraestrutura_oficina', reportUrl: 'https://drive.google.com/file/d/1U1Q6KW9uXhVFTLO7XpdT22X10Urax8KR/view?usp=sharing', termUrl: '#' },
+            { id: 139, responsible: 'LUIZ CARLOS DA SILVA', location: 'SALA 1012 – ALMOXARIFADO ELÉTRICO E HIDRÁULICO', mainCategory: 'infraestrutura_oficina', reportUrl:'https://drive.google.com/file/d/11PkKL19MohqCC_miSOvGW_ac7IMBrbqi/view?usp=sharing', termUrl: '#' },
+            { id: 140, responsible: 'DOUGLAS WILIAM', location: 'SALA 1007 – OFICINA DE MANUTENÇÃO', mainCategory: 'infraestrutura_oficina', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-1007-OFICINA-DE-MANUTENCAO-DOUGLAS-WILLIAM-DINIZ-E-SILVA.pdf', termUrl: '#' },
+            { id: 141, responsible: 'BÁRBARA SOARES', location: 'SALA 1003F – MARCENARIA', mainCategory: 'infraestrutura_oficina', reportUrl: '#', termUrl: '#' },
+            { id: 142, responsible: 'BÁRBARA SOARES', location: 'SALA 1003C – BENS OCIOSOS', mainCategory: 'infraestrutura_oficina', reportUrl: '#', termUrl: '#' },
+            { id: 143, responsible: 'LUIZ CARLOS DA SILVA', location: 'INFRA CORREDORES E PORTARIAS', mainCategory: 'infraestrutura_oficina', reportUrl:'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/CORREDORES-E-PORTARIAS-LUIZ-CARLOS-DA-SILVA-CRUZ.pdf', termUrl: '#' },
+            { id: 144, responsible: 'LUIZ CARLOS DA SILVA', location: 'CANTINA', mainCategory: 'infraestrutura_oficina', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/CANTINA-LUIZ-CARLOS-DA-SILVA-CRUZ.pdf', termUrl: '#' },
+            { id: 145, responsible: 'ALAN FELIPE', location: 'AUDITORIO', mainCategory: 'infraestrutura_oficina', reportUrl:'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/AUDITORIO-ALAN-FELIPE-SOUZA.pdf', termUrl: '#' },
+
+            // Biblioteca
+            { id: 15, responsible: 'MIRIAM CANDIDA DE JESUS', location: 'HALL COLEÇÃO DE LIVROS E TESES, ETC', mainCategory: 'biblioteca', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/HALL-COLECAO-DE-LIVROS-E-TESES-MIRIAM-CANDIDA-DE-JESUS.pdf', termUrl: '#' },
+            { id: 31, responsible: 'VALERIA FERREIRA DE JESUS LAURIANO', location: 'HALL COLEÇÃO DE PERIÓDICOS', mainCategory: 'biblioteca', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/HALL-COLECAO-DE-PERIODICOS-VALERIA-FERREIRA-DE-JESUS.pdf', termUrl: '#' },
+            { id: 32, responsible: 'LUCIANA GONCALVES SILVA SOUZA', location: 'HALL DE ENTRADA DA BIBLIOTECA', mainCategory: 'biblioteca', reportUrl: '#', termUrl: '#' },
+            { id: 33, responsible: 'LUCIANA GONCALVES SILVA SOUZA', location: 'BALCÃO DE EMPRÉSTIMO', mainCategory: 'biblioteca', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/BALCAO-DE-EMPRESTIMO-LUCIANA-GONCALVES-SILVA.pdf', termUrl: '#' },
+            { id: 34, responsible: 'MATEUS HENRIQUE SILVA', location: 'SALA 3401 - F_G_H_I_J - ESTUDO EM GRUPO', mainCategory: 'biblioteca', reportUrl:'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-3401-F_G_H_I_J-ESTUDO-EM-GRUPO-MATEUS-HENRIQUE-SILVA.pdf', termUrl: '#' },
+            { id: 35, responsible: 'CLAUDIA MARCIA DIAS SILVA', location: 'SALA 3401A - PESQUISA BIBLIOGRÁFICA', mainCategory: 'biblioteca', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-3401A-PESQUISA-BIBLIOGRAFICA-CLAUDIA-MARCIA-DIAS.pdf', termUrl: '#' },
+            { id: 36, responsible: 'SERGIO BARBOSA DOS SANTOS', location: 'SETOR DE ESTUDOS DA BIBLIOTECA_FO', mainCategory: 'biblioteca', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SETOR-DE-ESTUDOS-DA-BIBLIOTECA_FO-SERGIO-BARBOSA-DOS-SANTOS.pdf', termUrl: '#' },
+            { id: 37, responsible: 'CLAUDIA MARCIA DIAS SILVA', location: 'SALA 3401B - CHEFIA DA BIBLIOTECA', mainCategory: 'biblioteca', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-3401B-CHEFIA-DA-BIBLIOTECA-CLAUDIA-MARCIA-DIAS.pdf', termUrl: '#' },
+            { id: 38, responsible: 'VALERIA FERREIRA DE JESUS LAURIANO', location: 'SALA 3401C - SALA DE FUNCIONÁRIO', mainCategory: 'biblioteca', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-3401C-SALA-DE-FUNCIONARIO-VALERIZA-FERREIRA-DE-JESUS.pdf', termUrl: '#' },
+            { id: 39, responsible: 'MIRIAM CANDIDA DE JESUS', location: 'SALA 3401D - PROCES.TÉCNICO_COMUTAÇÃO', mainCategory: 'biblioteca', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-3401D-PROCES.TECNICO_COMUTACAO-MIRIAM-CANDIDA.pdf', termUrl: '#' },
+            { id: 40, responsible: 'MATEUS HENRIQUE SILVA TRINDADE', location: 'SALA 3401L - DEPÓSITO_BIBLIOTECA', mainCategory: 'biblioteca', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-3401E-DEPOSITO_BIBLIOTECA-MATEUS-HENRIQUE-SILVA.pdf', termUrl: '#' },
+            { id: 151, responsible: 'Mateus Henrique Silva Trindade', location: 'HALL DE ESTUDOS', mainCategory: 'biblioteca', reportUrl: 'https://drive.google.com/file/d/1llVdAO8aJ_ibG1AnngT05uONp0on-3aP/view?usp=sharing', termUrl: '#' },
+            { id: 152, responsible: 'Luciana Gonçalves Silva', location: 'PORTARIA - BIBLIOTECA', mainCategory: 'biblioteca', reportUrl: 'https://drive.google.com/file/d/1WGDkEGXVHmnbIG2-8aNg_YMw1oFWSCOw/view?usp=drive_link', termUrl: '#' },
+            { id: 153, responsible: 'Mateus Henrique Silva Trindade', location: 'Referência Biblioteca', mainCategory: 'biblioteca', reportUrl: 'https://drive.google.com/file/d/1kHnhEEv2vGpwRfnIg33ZnjJauI_Rao2Z/view?usp=drive_link', termUrl: '#' },
+
+            // Administrativo
+            { id: 16, responsible: 'ADIMILSON QUININO', location: 'SALA 1023 - SEÇÃO DE ALMOXARIFADO', mainCategory: 'administrativo', subCategory: 'Seção de Almoxarifado', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-1023-SECAO-DE-ALMOXARIFADO-ADIMILSON-QUININO-DOS-SANTOS.pdf', termUrl: '#' },
+            { id: 17, responsible: 'PROFA. MARIA INÊS SENNA', location: 'SALA 2901 - CENTRO DE MEMÓRIA - ARQUIVO', mainCategory: 'administrativo', subCategory: 'Centro de Memória', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-2901-CENTRO-DE-MEMORIA-ARQUIVO-MARIA-INES-BARREIROS-SENNA.pdf', termUrl: '#' },
+            { id: 18, responsible: 'ALAN FELIPE', location: 'SALA 2916 - TECNOLOGIA DA INFORMAÇÃO', mainCategory: 'administrativo', subCategory: 'Tecnologia da Informação', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-2916-TECNOLOGIA-DA-INFORMACAO-ALAN-FELIPE-SOUZA.pdf', termUrl: '#' }, 
+            { id: 19, responsible: 'BÁRBARA SOARES', location: 'SALA 2911 - SEÇÃO DE PATRIMÔNIO', mainCategory: 'administrativo', subCategory: 'Seção de Patrimônio', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-2911-SECAO-DE-PATRIMONIO-BARBARA-FERREIRA-SOARES.pdf', termUrl: '#' },
+            { id: 20, responsible: 'FRANKLIN MINARDI', location: 'SALA 2919 - Seção de Pessoal', mainCategory: 'administrativo', subCategory: 'Seção de Pessoal', reportUrl:'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-2919-SECAO-DE-PESSOAL-FRANKLIN-NOGUEIRA-MINARDI.pdf', termUrl: '#' },
+            { id: 21, responsible: 'FRANKLIN MINARDI', location: 'SALA 2919 - Seção de Pessoal', mainCategory: 'administrativo', subCategory: 'Diretoria', reportUrl: '#', termUrl: '#' },
+            { id: 22, responsible: 'LILIAN CRISTINA', location: 'SALA 2920 - SEÇÃO DE COMPRAS', mainCategory: 'administrativo', subCategory: 'Seção de Compras', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-2920-CONTROLE-E-QUALIDADE-DE-MATERIAIS-LILIAN-CRISTINA-DE-SOUZA.pdf', termUrl: '#' },
+            { id: 23, responsible: 'RENATA DE MELO', location: 'SALA 2921 - SEÇÃO DE CONTABILIDADE', mainCategory: 'administrativo', subCategory: 'Seção de Contabilidade', reportUrl: 'https://drive.google.com/file/d/1isToyMtihCWRpqVc6b8xqKFYGOWzAndV/view?usp=drive_link', termUrl: '#' },
+            { id: 24, responsible: 'LAYSSE MACEDO', location: 'SALA 2925 - GESTão DE CONTRATOS', mainCategory: 'administrativo', subCategory: 'Gestão de Contratos', reportUrl: 'https://drive.google.com/file/d/1CGMhuKePv2boxmXKFbHWR1vtuqTkCUV3/view?usp=drive_link', termUrl: '#' },
+            { id: 25, responsible: 'RONALDO CONDE', location: 'SALA 2926 - RECEPÇÃO DA DIRETORIA', mainCategory: 'administrativo', subCategory: 'Diretoria', reportUrl: 'https://drive.google.com/file/d/1rlQmX82bHkTXZIUgsaFlg_msa6wAwvZd/view?usp=drive_link', termUrl: '#' },
+            { id: 26, responsible: 'RONALDO CONDE', location: 'SALA 2926 - SECRETARIA GERAL', mainCategory: 'administrativo', subCategory: 'Diretoria', reportUrl: 'https://drive.google.com/file/d/14rqXd7uIH3L-ifBkwTgnV3I0Il6NZCZY/view?usp=drive_link', termUrl: '#' },
+            { id: 27, responsible: 'SILVILENE GIOVANE', location: 'SALA 2927 - SUPERINTENDÊNCIA ADMINISTRATIVA', mainCategory: 'administrativo', subCategory: 'Superintendência Administrativa', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-2927-SUPERINTENDENCIA-ADMINISTRATIVA-SILVILENE-GIOVANE-MARTINS-PEREIRA.pdf', termUrl: '#' },
+            { id: 28, responsible: 'PROF. JOÃO BATISTA NOVAES JUNIOR', location: 'SALA 2928 - DIRETORIA E VICE-DIRETORIA', mainCategory: 'administrativo', subCategory: 'Diretoria', reportUrl: 'https://drive.google.com/file/d/1BQjq4Ln6jh7RE5TXx0ttDB9AmeRx7452/view?usp=drive_link', termUrl: '#' },
+            { id: 29, responsible: 'RONALDO CONDE', location: 'SALA 2929 - SALA DE REUNIÃO', mainCategory: 'administrativo', subCategory: 'Diretoria', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-2929-SALA-DE-REUNIAO-RONALDO-DOS-SANTOS-CONDE.pdf', termUrl: '#' },
+            { id: 30, responsible: 'RONALDO CONDE', location: 'SALA 2930 - CONGREGAÇÃO', mainCategory: 'administrativo', subCategory: 'Diretoria', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-2930-CONGREGACAO-RONALDO-DOS-SANTOS-CONDE.pdf', termUrl: '#' }
+        ];
+
+        const mainCategoriesContainer = document.getElementById('main-categories');
+        const subcategoriesContainer = document.getElementById('subcategories-container');
+        const subcategoriesList = document.getElementById('subcategories-list');
+        const backButton = document.getElementById('back-to-categories');
+
+        // Evento de clique nas categorias principais
+        mainCategoriesContainer.addEventListener('click', (e) => {
+            const categoryCard = e.target.closest('.category-card');
+            if (categoryCard) {
+                const category = categoryCard.dataset.category;
+                
+                // Limpa a lista de subcategorias
+                subcategoriesList.innerHTML = '';
+
+                // Lógica para exibir os relatórios
+                if (category === 'biblioteca' || category === 'infraestrutura_oficina') {
+                    const directReports = reportsData.filter(item => item.mainCategory === category);
+                    let reportsHTML = directReports.map(report => `
+                        <div class="bg-white rounded-lg p-4 border shadow-sm">
+                            <h4 class="font-semibold text-gray-800">${report.location}</h4>
+                            <p class="text-sm text-gray-600 mb-3">Responsável: ${report.responsible}</p>
+                            <a href="${report.reportUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition text-sm">
+                                <i data-lucide="file-down" class="mr-2 h-4 w-4"></i>
+                                Baixar Relatório
+                            </a>
+                        </div>
+                    `).join('');
+                    subcategoriesList.innerHTML = `<div class="space-y-3">${reportsHTML}</div>`;
+
+                } else {
+                    const reportsBySubcategory = reportsData
+                        .filter(item => item.mainCategory === category)
+                        .reduce((acc, report) => {
+                            if (!acc[report.subCategory]) {
+                                acc[report.subCategory] = [];
+                            }
+                            acc[report.subCategory].push(report);
+                            return acc;
+                        }, {});
+
+                    for (const subCategoryName in reportsBySubcategory) {
+                        const reportsInSub = reportsBySubcategory[subCategoryName];
+                        const accordionItem = document.createElement('div');
+                        accordionItem.className = 'subcategory-accordion-item bg-white border rounded-lg';
+                        
+                        let reportsHTML = reportsInSub.map(report => `
+                            <div class="bg-gray-50 rounded-lg p-4 border">
+                                <h4 class="font-semibold text-gray-800">${report.location}</h4>
+                                <p class="text-sm text-gray-600 mb-3">Responsável: ${report.responsible}</p>
+                                <a href="${report.reportUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition text-sm">
+                                    <i data-lucide="file-down" class="mr-2 h-4 w-4"></i>
+                                    Baixar Relatório
+                                </a>
+                            </div>
+                        `).join('');
+
+                        accordionItem.innerHTML = `
+                            <button class="subcategory-header w-full flex justify-between items-center p-4 text-left font-semibold">
+                                <span>${subCategoryName}</span>
+                                <i data-lucide="chevron-down" class="transition-transform"></i>
+                            </button>
+                            <div class="subcategory-content">
+                                <div class="py-2 px-4 space-y-3">
+                                    ${reportsHTML}
+                                </div>
+                            </div>
+                        `;
+                        subcategoriesList.appendChild(accordionItem);
+                    }
+                }
+                
+                lucide.createIcons();
+
+                // Mostra a tela de subcategorias/resultados
+                mainCategoriesContainer.classList.add('hidden');
+                subcategoriesContainer.classList.remove('hidden');
+            }
+        });
+
+        // Evento de clique no acordeão de subcategorias
+        subcategoriesList.addEventListener('click', (e) => {
+            const header = e.target.closest('.subcategory-header');
+            if (header) {
+                const content = header.nextElementSibling;
+                const icon = header.querySelector('svg');
+                
+                document.querySelectorAll('.subcategory-content').forEach(c => {
+                    if (c !== content) {
+                        c.style.maxHeight = null;
+                        c.style.paddingTop = '0';
+                        c.style.paddingBottom = '0';
+                        const otherIcon = c.previousElementSibling.querySelector('svg');
+                        if (otherIcon) otherIcon.classList.remove('rotate-180');
+                    }
+                });
+                
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                    content.style.paddingTop = '0';
+                    content.style.paddingBottom = '0';
+                    if (icon) icon.classList.remove('rotate-180');
+                } else {
+                    content.style.paddingTop = '0.5rem';
+                    content.style.paddingBottom = '0.5rem';
+                    content.style.maxHeight = content.scrollHeight + "px";
+                    if (icon) icon.classList.add('rotate-180');
+                }
+            }
+        });
+
+        // Evento do botão de voltar
+        backButton.addEventListener('click', () => {
+            subcategoriesContainer.classList.add('hidden');
+            mainCategoriesContainer.classList.remove('hidden');
+        });
+
+        // Funcionalidade do FAQ (Modal Pop-up)
+        const faqData = [
+            { 
+                id: "1", 
+                icon: 'search-slash',
+                title: 'BENS NÃO LOCALIZADOS', 
+                content: 'Bens não localizados devem ser reportados e enviados junto ao relatório e uma justificativa. Anote o número de patrimônio e a descrição do bem para formalizar a comunicação.' 
+            },
+            { 
+                id: "2",
+                icon: 'plus-circle', 
+                title: 'BENS NÃO LOCALIZADOS NA LISTAGEM', 
+                content: 'Esses são os "bens existentes". O procedimento é relatar a existência deles no local. ATENÇÃO: Caso já tenha relatado no Inventário de 2024, basta sinalizar que os mesmos bens permanecem no local, não sendo necessário um novo registro detalhado.' 
+            },
+            { 
+                id: "3",
+                icon: 'user-x', 
+                title: 'BENS PARTICULARES', 
+                content: 'É importante declarar a existência de bens particulares (que não pertencem à Universidade) no seu local de guarda para evitar que sejam confundidos com o patrimônio público. ATENÇÃO: Se já foram declarados em 2024, eles estarão registrados e você só precisa confirmar que continuam no mesmo local. Uma nova declaração só é necessária para itens novos.' 
+            },
+            { 
+                id: "4",
+                icon: 'x-circle',
+                title: 'BENS SEM PLAQUETA', 
+                content: 'Bens que se encontram na listagem, mas estão "sem plaqueta" devem ter a situação informada à comissão. O responsável pode solitar plaquetas provisórias na Seção de Patrimônio. ATENÇÃO: Se já foram declarados em 2024, eles estarão registrados e você só precisa confirmar que continuam no mesmo local.'
+            }
+        ];
+
+        const faqCardsContainer = document.getElementById('faq-cards-container');
+        const modal = document.getElementById('faq-modal');
+        const modalContent = document.getElementById('faq-modal-content');
+        const modalCloseBtn = document.getElementById('modal-close-btn');
+        const modalTitle = document.getElementById('modal-title');
+        const modalText = document.getElementById('modal-text');
+        const modalIconContainer = document.getElementById('modal-icon-container');
+
+        faqCardsContainer.addEventListener('click', (e) => {
+            const card = e.target.closest('.faq-card');
+            if (card) {
+                const faqId = card.dataset.faqId;
+                const data = faqData.find(item => item.id === faqId);
+
+                if (data) {
+                    modalTitle.textContent = data.title;
+                    modalText.textContent = data.content;
+                    
+                    modalIconContainer.innerHTML = `<i data-lucide="${data.icon}" class="w-6 h-6 text-blue-600"></i>`;
+                    lucide.createIcons();
+
+                    modal.classList.remove('hidden');
+                    setTimeout(() => {
+                        modalContent.classList.remove('scale-95', 'opacity-0');
+                    }, 10); // small delay to allow transition
+                }
+            }
+        });
+
+        function closeModal() {
+            modalContent.classList.add('scale-95', 'opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300); // match transition duration
+        }
+
+        modalCloseBtn.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+        
+        // Lógica do Contador
+        const countdownContainer = document.getElementById('countdown-container');
+        const startDate = new Date('2025-10-13T00:00:00');
+        const endDate = new Date('2025-12-05T23:59:59');
+        const today = new Date();
+
+        today.setHours(0, 0, 0, 0);
+
+        if (today < startDate) {
+            const daysToStart = Math.ceil((startDate - today) / (1000 * 60 * 60 * 24));
+            countdownContainer.innerHTML = `
+                <i data-lucide="calendar-clock" class="mx-auto h-10 w-10 text-blue-600 mb-2"></i>
+                O período do inventário começa em <span class="text-blue-600">${daysToStart}</span> ${daysToStart > 1 ? 'dias' : 'dia'}.
+            `;
+        } else if (today >= startDate && today <= endDate) {
+            const daysRemaining = Math.ceil((endDate - today) / (1000 * 60 * 60 * 24));
+            if (daysRemaining > 1) {
+                countdownContainer.innerHTML = `
+                    <i data-lucide="alarm-clock" class="mx-auto h-10 w-10 text-yellow-500 mb-2"></i>
+                    Faltam <span class="text-yellow-600">${daysRemaining}</span> dias para o fim do prazo.
+                `;
+            } else if (daysRemaining === 1) {
+                countdownContainer.innerHTML = `
+                    <i data-lucide="alarm-clock-off" class="mx-auto h-10 w-10 text-red-500 mb-2"></i>
+                    <span class="text-red-600">Atenção! O prazo termina hoje!</span>
+                `;
+            } else {
+                countdownContainer.innerHTML = `
+                    <i data-lucide="calendar-x-2" class="mx-auto h-10 w-10 text-red-500 mb-2"></i>
+                    <span class="text-red-600">Prazo Encerrado!</span>
+                `;
+            }
+        } else {
+            countdownContainer.innerHTML = `
+                <i data-lucide="calendar-check-2" class="mx-auto h-10 w-10 text-green-600 mb-2"></i>
+                <span class="text-green-700">O período para o inventário de 2025 foi encerrado.</span>
+            `;
+        }
+        lucide.createIcons();
+
+
+    </script>
+</body>
+</html>
+
+
