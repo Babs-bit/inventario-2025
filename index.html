@@ -49,12 +49,12 @@
     <header class="bg-white shadow-md sticky top-0 z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center">
-                <span class="text-lg md:text-xl font-semibold text-gray-800">SEÇÃO DE PATRIMÔNIO - FAO UFMG</span>
+                <span class="text-base md:text-lg font-semibold text-gray-600">SEÇÃO DE PATRIMÔNIO - FAO UFMG</span>
             </div>
             <nav class="hidden md:flex space-x-8">
                 <a href="#inicio" class="text-gray-600 hover:text-blue-700 transition">Início</a>
                 <a href="#relatorios" class="text-gray-600 hover:text-blue-700 transition">Relatórios</a>
-                <a href="#guias" class="text-gray-600 hover:text-blue-700 transition">Guias e Tutoriais</a>
+                <a href="#guias" class="text-gray-600 hover:text-blue-700 transition">Guias e Formulários</a>
                 <a href="#comissao" class="text-gray-600 hover:text-blue-700 transition">Comissão</a>
                 <a href="#contato" class="text-gray-600 hover:text-blue-700 transition">Contato</a>
             </nav>
@@ -85,27 +85,36 @@
             </div>
         </section>
 
+        <!-- Seção de Contagem Regressiva -->
+        <section id="countdown" class="py-12 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <div id="countdown-container" class="text-2xl md:text-3xl font-bold text-gray-700 flex flex-col items-center justify-center">
+                    <!-- Conteúdo do contador será inserido aqui pelo JavaScript -->
+                </div>
+            </div>
+        </section>
+
         <!-- Seção de Acesso Rápido -->
-        <section id="acesso-rapido" class="py-16 bg-white">
+        <section id="acesso-rapido" class="py-16 bg-gray-50">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl font-bold section-title inline-block">Acesso Rápido</h2>
                     <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Encontre rapidamente as seções mais importantes do portal</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-                    <a href="#relatorios" class="quick-access-card bg-gray-50 p-6 rounded-lg border-2 border-transparent text-center group">
+                    <a href="#relatorios" class="quick-access-card bg-white p-6 rounded-lg border-2 border-transparent text-center group">
                         <i data-lucide="file-search" class="mx-auto h-10 w-10 text-blue-600 mb-3 transition-transform group-hover:scale-110"></i>
                         <h3 class="text-lg font-bold text-gray-800">Encontrar Relatório</h3>
                     </a>
-                    <a href="#faq" class="quick-access-card bg-gray-50 p-6 rounded-lg border-2 border-transparent text-center group">
+                    <a href="#faq" class="quick-access-card bg-white p-6 rounded-lg border-2 border-transparent text-center group">
                         <i data-lucide="help-circle" class="mx-auto h-10 w-10 text-blue-600 mb-3 transition-transform group-hover:scale-110"></i>
                         <h3 class="text-lg font-bold text-gray-800">Tira-dúvidas</h3>
                     </a>
-                    <a href="#guias" class="quick-access-card bg-gray-50 p-6 rounded-lg border-2 border-transparent text-center group">
+                    <a href="#guias" class="quick-access-card bg-white p-6 rounded-lg border-2 border-transparent text-center group">
                         <i data-lucide="book-open" class="mx-auto h-10 w-10 text-blue-600 mb-3 transition-transform group-hover:scale-110"></i>
-                        <h3 class="text-lg font-bold text-gray-800">Guias e Tutoriais</h3>
+                        <h3 class="text-lg font-bold text-gray-800">Guias e Formulários</h3>
                     </a>
-                    <a href="#comissao" class="quick-access-card bg-gray-50 p-6 rounded-lg border-2 border-transparent text-center group">
+                    <a href="#comissao" class="quick-access-card bg-white p-6 rounded-lg border-2 border-transparent text-center group">
                         <i data-lucide="users" class="mx-auto h-10 w-10 text-blue-600 mb-3 transition-transform group-hover:scale-110"></i>
                         <h3 class="text-lg font-bold text-gray-800">Comissão</h3>
                     </a>
@@ -114,11 +123,11 @@
         </section>
 
         <!-- Seção de Busca de Relatórios -->
-        <section id="relatorios" class="py-20 bg-gray-50">
+        <section id="relatorios" class="py-20 bg-white">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl font-bold section-title inline-block">Encontre seu Relatório</h2>
-                    <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Navegue pelas categorias abaixo para encontrar o relatório do seu local de guarda</p>
+                    <p class="text-red-600 mt-4 max-w-2xl mx-auto">Atenção! Envie o relatório para odontoinventario2025@gmail.com</p>
                 </div>
 
                 <!-- Navegação por Blocos -->
@@ -198,7 +207,7 @@
         </section>
 
         <!-- Seção de Guias e Tutoriais -->
-        <section id="guias" class="py-20 bg-white">
+        <section id="guias" class="py-20 bg-gray-50">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
                      <h2 class="text-3xl font-bold section-title inline-block">Guias e Formulários</h2>
@@ -214,7 +223,7 @@
                             </div>
                             <i data-lucide="download" class="ml-auto text-gray-500 group-hover:text-blue-700"></i>
                         </a>
-                        <a href="https://drive.google.com/file/d/1mWkjWp8ej9-mLSKFdXOSTFxj7jHTbkl5/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="flex items-center bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition group border">
+                        <a href="https://www.odonto.ufmg.br/wp-content/uploads/2025/10/bens-existentes-particulares.pdf" target="_blank" rel="noopener noreferrer" class="flex items-center bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition group border">
                             <i data-lucide="book-open" class="text-blue-600 mr-4 h-8 w-8"></i>
                             <div>
                                 <span class="font-semibold text-lg text-gray-800">Formulários para Bens Existentes e Particulares</span>
@@ -228,7 +237,7 @@
         </section>
 
         <!-- Seção da Comissão -->
-        <section id="comissao" class="py-20 bg-blue-50">
+        <section id="comissao" class="py-20 bg-white">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl font-bold section-title inline-block">Membros de Referência da Comissão</h2>
@@ -349,18 +358,15 @@
     </div>
 
     <script>
-    document.addEventListener('DOMContentLoaded', function () {
         // Ícones Lucide
         lucide.createIcons();
 
         // Menu Mobile
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
-        if (mobileMenuButton) {
-            mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-        }
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
         
         // Dados para os relatórios
         const reportsData = [
@@ -389,7 +395,7 @@
             { id: 76, responsible: 'PROFA. ROGELI TIBURCIO RIBEIRO DA CUNHA PEIXOTO', location: 'SALA 3104 – LABORATÓRIO MULTIDISCIPLINAR 01', mainCategory: 'departamentos', subCategory: 'Odontologia Restauradora', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-3104-LABORATORIO-MULTIDISCIPLINAR-01-ROGELI-TIBURCIO-RIBEIRO-DA-CUNHA-PEIXOTO.pdf', termUrl: '#' },
             { id: 77, responsible: 'PROF. DANILO ROCHA DIAS', location: 'SALA 3301 – GABINETE DE PROFESSOR 01', mainCategory: 'departamentos', subCategory: 'Odontologia Restauradora', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/002-SALA-3301-GABINETE-DE-PROFESSOR-01-DANILO-ROCHA-DIAS.pdf', termUrl: '#' },
             { id: 78, responsible: 'PROFA. JULIANA VILELA BASTOS', location: 'SALA 3308 – CHEFIA_SECRETARIA ODR', mainCategory: 'departamentos', subCategory: 'Odontologia Restauradora', reportUrl:'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-3308-CHEFIA_SECRETARIA-ODR-JULIANA-VILELA-BASTOS.pdf', termUrl: '#' },
-            { id: 79, responsible: 'PROFA. RAFAELA DA SILVEIRA PINTO', location: 'SALA 3336 – GABINETE DE PROFESSOR 02', mainCategory: 'departamentos', subCategory: 'Odontologia Restauradora', reportUrl: '#', termUrl:'#'},
+            { id: 79, responsible: 'PROFA. RAFAELA DA SILVEIRA PINTO', location: 'SALA 3336 – GABINETE DE PROFESSOR 02', mainCategory: 'departamentos', subCategory: 'Odontologia Restauradora', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-3336-GABINETE-DE-PROFESSOR-02-RAFAELA-DA-SILVEIRA-PINTO.pdf', termUrl:'#'},
             { id: 80, responsible: 'PROFA. ANA CECILIA DINIZ VIANA', location: 'SALA 3337 – GABINETE DE PROFESSORES 03', mainCategory: 'departamentos', subCategory: 'Odontologia Restauradora', reportUrl:'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-3337-GABINETE-DE-PROFESSORES-03-ANA-CECILIA-DINIZ-VIANA.pdf', termUrl: '#' },
             { id: 81, responsible: 'PROFA. MARCOS DANIEL SEPTIMIO LANZA', location: 'SALA 3338 – GABINETE DE PROFESSOR 04', mainCategory: 'departamentos', subCategory: 'Odontologia Restauradora', reportUrl:'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-3338-GABINETE-DE-PROFESSOR-04-MARCOS-DANIEL-SEPTIMIO-LANZA.pdf', termUrl: '#' },
             { id: 82, responsible: 'PROFA. ROGELI TIBURCIO RIBEIRO DA CUNHA PEIXOTO', location: 'SALA 3339 – GABINETE DE PROFESSOR 05', mainCategory: 'departamentos', subCategory: 'Odontologia Restauradora', reportUrl:'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-3339-GABINETE-DE-PROFESSOR-05-ROGELI-TIBURCIO-RIBEIRO-DA-CUNHA-PEIXOTO.pdf', termUrl: '#' },
@@ -416,16 +422,12 @@
             { id: 103, responsible: 'PROFA. ALINE ARAÚJO SAMPAIO', location: 'SALA 3333 – GABINETE DE PROFESSOR 06', mainCategory: 'departamentos', subCategory: 'Clínica Patologia e Cirurgia Odontológica', reportUrl: 'https://drive.google.com/file/d/1dgkTKLEJOxvnKSVwT-4CNkqR-IQiXcP-/view?usp=drive_link', termUrl: '#' },
             { id: 104, responsible: 'PROF. FABIANO ARAUJO CUNHA', location: 'SALA 3334 – GABINETE DE PROFESSOR 07', mainCategory: 'departamentos', subCategory: 'Clínica Patologia e Cirurgia Odontológica', reportUrl: 'https://drive.google.com/file/d/1KCtEud_h-oOkqsDyB6tlB5AK5TmWY8zU/view?usp=drive_link', termUrl: '#' },
             { id: 105, responsible: 'DOMENICO ROMANO', location: 'SALA 1018 – ARQUIVO DE LÂMINAS', mainCategory: 'departamentos', subCategory: 'Clínica Patologia e Cirurgia Odontológica', reportUrl: 'https://drive.google.com/file/d/1mqJ9PZUibayldMlBw2f7oWzRqFAo72CM/view?usp=drive_link', termUrl: '#' },
-            { id: 158, responsible: 'PROFA. TARCILIA APARECIDA DA SILVA', location: 'SALA 3105 - GABINETE DE PROFESSOR A', mainCategory: 'departamentos', subCategory: 'Clínica Patologia e Cirurgia Odontológica', reportUrl: 'https://drive.google.com/file/d/1FMuAWMSY_xL3GAe4-4YiH0eDkbfowqVj/view?usp=drive_link', termUrl: '#' },
-            { id: 159, responsible: 'PROF. RICARDO SANTIAGO GOMEZ', location: 'SALA 3105 - GABINETE DE PROFESSOR B', mainCategory: 'departamentos', subCategory: 'Clínica Patologia e Cirurgia Odontológica', reportUrl: 'https://drive.google.com/file/d/1gscVKx6naQT-DeISqiwjHOlsF2KAXd-l/view?usp=drive_link', termUrl: '#' },
-            { id: 160, responsible: 'PROF. RICARDO ALVES DE MESQUITA', location: 'SALA 3105 - GABINETE DE PROFESSOR C', mainCategory: 'departamentos', subCategory: 'Clínica Patologia e Cirurgia Odontológica', reportUrl: 'https://drive.google.com/file/d/1Pl-LUvKJWTcbJnaP99MzsfK8s96fWxes/view?usp=drive_link', termUrl: '#' },
-            { id: 161, responsible: 'PROFA. TARCÍLIA APARECIDA DA SILVA', location: 'SALA 3406 - ANEXO II - LAB. DE PATOLOGIA EXPERIMENTAL 3', mainCategory: 'departamentos', subCategory: 'Clínica Patologia e Cirurgia Odontológica', reportUrl: 'https://drive.google.com/file/d/1KcD4H4RufwMyCLgNSa9_C6X5D7lYgBR4/view?usp=sharing', termUrl: '#' },
             
             // Acadêmico e Extensão
-            { id: 42, responsible: 'PROF. LUCAS GUIMARÃES ABREU', location: 'SALA 2909A', mainCategory: 'academico', subCategory: 'Colegiado de Graduação', reportUrl: 'https://drive.google.com/file/d/18JM5L8x5YT9ySrYdvo5J80xY_pgYoOrG/view?usp=drive_link', termUrl: '#' },
-            { id: 43, responsible: 'PROF. LUCAS GUIMARÃES ABREU', location: 'SALA 2909 – COLEGIADO DE GRADUAÇÃO', mainCategory: 'academico', subCategory: 'Colegiado de Graduação', reportUrl: 'https://drive.google.com/file/d/1cBdxLL9N6MDPRTBQjNm4YLb9nShWTo4a/view?usp=drive_link', termUrl: '#' },
-            { id: 44, responsible: 'PROF. LUCAS GUIMARÃES ABREU', location: 'SALA 2912 – NDE', mainCategory: 'academico', subCategory: 'Colegiado de Graduação', reportUrl: 'https://drive.google.com/file/d/1elIJbQLPW1QxM6hk1XfCdREmIEyXzEjg/view?usp=drive_link', termUrl: '#' },
-            { id: 45, responsible: 'ALAN FELIPE SOUZA', location: 'SALA 2913 – NEPPEO', mainCategory: 'academico', subCategory: 'Colegiado de Graduação', reportUrl: 'https://drive.google.com/file/d/1dIBzxaXNfVspPZbD1Co7_WUDGqt7ntno/view?usp=drive_link', termUrl: '#' },
+            { id: 42, responsible: 'PROF. LUCAS GUIMARÃES ABREU', location: 'SALA 2909A', mainCategory: 'academico', subCategory: 'Colegiado de Graduação', reportUrl: '#', termUrl: '#' },
+            { id: 43, responsible: 'PROF. LUCAS GUIMARÃES ABREU', location: 'SALA 2909 – COLEGIADO DE GRADUAÇÃO', mainCategory: 'academico', subCategory: 'Colegiado de Graduação', reportUrl: '#', termUrl: '#' },
+            { id: 44, responsible: 'PROF. LUCAS GUIMARÃES ABREU', location: 'SALA 2912 – NDE', mainCategory: 'academico', subCategory: 'Colegiado de Graduação', reportUrl: '#', termUrl: '#' },
+            { id: 45, responsible: 'ALAN FELIPE SOUZA', location: 'SALA 2913 – NEPPO', mainCategory: 'academico', subCategory: 'Colegiado de Graduação', reportUrl: '#', termUrl: '#' },
             { id: 46, responsible: 'PROFA. ISABELLA FARIA DA CUNHA PEIXOTO', location: 'SALA 2301 – CLÍNICA 7 – PÓS GRADUAÇÃO', mainCategory: 'academico', subCategory: 'Colegiado de Pós-Graduação', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-2301-CLINICA-7-POS-GRADUACAO-ISABELLA-FARIA-DA-CUNHA-PEIXOTO.pdf', termUrl: '#' },
             { id: 47, responsible: 'PROF. MAURO HENRIQUE NOGUEIRA', location: 'SALA 3309 – CHEFIA DO COLEGIADO E PÓS GRADUAÇÃO', mainCategory: 'academico', subCategory: 'Colegiado de Pós-Graduação', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-3309-CHEFIA-DO-COLEGIADODE-POS-GRADUACAO-MAURO-HENRIQUE-NOGUEIRA-GUIMARAES-DE-ABREU.pdf', termUrl: '#' },
             { id: 48, responsible: 'PROF. MAURO HENRIQUE NOGUEIRA GUIMARAES DE ABREU', location: 'SALA 3310 – SECRETARIA DO COL. DE PÓS GRADUAÇÃO', mainCategory: 'academico', subCategory: 'Colegiado de Pós-Graduação', reportUrl:'https://drive.google.com/file/d/11qyP9kt7n8uBxfbOHO74n3Mpd5nQHty7/view?usp=drive_link', termUrl:'#'},
@@ -451,14 +453,14 @@
             { id: 111, responsible: 'NEUZA APARECIDA SILVA E SOUZA', location: 'CLÍNICA 6', mainCategory: 'coord_enfermagem_caseu', subCategory: 'Clínicas', reportUrl:'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/CLINICA-06-NEUZA-APARECIDA-SILVA-E-SOUZA.pdf', termUrl: '#' },
             { id: 112, responsible: 'ALDEIR PEREIRA RIGUETTE', location: 'SALA 1011_1012 – APOIO CME LAVANDERIA', mainCategory: 'coord_enfermagem_caseu', subCategory: 'Apoio CME e Logística', reportUrl:'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-1011_1012-APOIO-CME-LAVANDERIA-ALDEIR-PEREIRA-RIGUETTE.pdf', termUrl: '#' },
             { id: 113, responsible: 'NILMA DE JESUS APOLINARIO', location: 'SALA 1016 – APOIO CME', mainCategory: 'coord_enfermagem_caseu', subCategory: 'Apoio CME e Logística', reportUrl: 'https://drive.google.com/file/d/1kSVP4tDkXmeBsYuGy_lCA3Uhsol7zQ-b/view?usp=drive_link', termUrl: '#' },
-            { id: 114, responsible: 'ALDEIR PEREIRA RIGUETTE', location: 'SALA 2112 – CME', mainCategory: 'coord_enfermagem_caseu', subCategory: 'Apoio CME e Logística', reportUrl:'https://drive.google.com/file/d/1SV9ZlLUInKyQXn72D4Eew5yhU1tFKBRN/view?usp=sharing', termUrl: '#' },
+            { id: 114, responsible: 'ALDEIR PEREIRA RIGUETTE', location: 'SALA 2112 – CME', mainCategory: 'coord_enfermagem_caseu', subCategory: 'Apoio CME e Logística', reportUrl:'#', termUrl: '#' },
             { id: 115, responsible: 'ALINE DE CASSIA BAPTISTA CONTARINI', location: 'SALA 2201 – APOIO CME', mainCategory: 'coord_enfermagem_caseu', subCategory: 'Apoio CME e Logística', reportUrl: 'https://drive.google.com/file/d/1A60G083LreLXJR88olrfUD_lNe2DIvoV/view?usp=drive_link', termUrl: '#' },
             { id: 116, responsible: 'ANTONIO ADAO ROSA', location: 'SALA 2203A – CENTRAL DE EQUIPAMENTOS', mainCategory: 'coord_enfermagem_caseu', subCategory: 'Apoio CME e Logística', reportUrl:'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-2203A-CENTRAL-DE-EQUIPAMENTOS-ANTONIO-ADAO-ROSA.pdf', termUrl: '#' },
             { id: 117, responsible: 'MURILO MIRANDA QUEIROZ', location: 'SALA 2209D – ALMOXARIFADO CLÍNICA 03', mainCategory: 'coord_enfermagem_caseu', subCategory: 'Apoio CME e Logística', reportUrl:'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-2209D-ALMOXARIFADO-CLINICA-03-MURILO-MIRANDA-QUEIROZ.pdf', termUrl: '#' },
             { id: 118, responsible: 'LUCIANA GUILHERME GONZAGA CARMO', location: 'SALA 2216A – ENTREPOSTO _MEDICAMENTOS', mainCategory: 'coord_enfermagem_caseu', subCategory: 'Apoio CME e Logística', reportUrl:'https://drive.google.com/file/d/10ada-dge8Ml7z_cWtwliPmK2UigMZ-h7/view?usp=drive_link', termUrl: '#' },
             { id: 119, responsible: 'LORRAINE CRISTINA MARQUES DE QUEIROZ', location: 'SALA 2501A – ARSENAL – CME', mainCategory: 'coord_enfermagem_caseu', subCategory: 'Apoio CME e Logística', reportUrl: 'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/002-SALA-2501A-ARSENAL-CME-LORRAINE-CRISTINA-MARQUES-DE-QUEIROZ.pdf', termUrl: '#' },
             { id: 120, responsible: 'PATRICIA DIAS SILVA MADUREIRA', location: 'SALA 2502_03_03A – APOIO CME – EXPURGO', mainCategory: 'coord_enfermagem_caseu', subCategory: 'Apoio CME e Logística', reportUrl: 'https://drive.google.com/file/d/1yahL7L1HXi7xePSEcbnQdn1GKjb3fq6m/view?usp=drive_link', termUrl: '#' },
-            { id: 121, responsible: 'ANA CRISTINA ROMA FIGUEIREDO', location: 'SALA 2212 – COORD TÉC DE ENF. E LOGÍSTICA CLÍN', mainCategory: 'coord_enfermagem_caseu', subCategory: 'Coordenação e Enfermagem', reportUrl: 'https://drive.google.com/file/d/1M4ME0baY14C7_zAObrMo8seVxooomnhe/view?usp=drive_link', termUrl: '#' },
+            { id: 121, responsible: 'ANA CRISTINA ROMA FIGUEIREDO', location: 'SALA 2212 – COORD TÉC DE ENF. E LOGÍSTICA CLÍN', mainCategory: 'coord_enfermagem_caseu', subCategory: 'Coordenação e Enfermagem', reportUrl: '#', termUrl: '#' },
             { id: 122, responsible: 'ALESSANDRA SANTOS DA CUNHA', location: 'SALA 2801 – SALA DA ENFERMAGEM', mainCategory: 'coord_enfermagem_caseu', subCategory: 'Coordenação e Enfermagem', reportUrl:'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/2801-SALA-DA-ENFERMAGEM-ALESSANDRA-SANTOS-DA-CUNHA.pdf', termUrl: '#' },
             { id: 146, responsible: 'KAMILLA FARIA MACIEL', location: 'SALA 2101B_2101C – CONSULTÓRIOS_EMERGÊNCIAS', mainCategory: 'coord_enfermagem_caseu', subCategory: 'CASEU', reportUrl:'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALAS-2101B_2101C-EMERGENCIAS-KAMILLA-FARIA-MACIEL.pdf', termUrl: '#' },
             { id: 147, responsible: 'LUMENA THAIS VIMIEIRO MELO', location: 'SALA 2104 – CENTRAL DE ATENDIMENTO CASEU', mainCategory: 'coord_enfermagem_caseu', subCategory: 'CASEU', reportUrl:'https://www.odonto.ufmg.br/wp-content/uploads/2025/10/SALA-2104-CENTRAL-DE-ATENDIMENTO-CASEU-LUMENA-THAIS-VIMIEIRO-MELO.pdf', termUrl: '#' },
@@ -470,7 +472,7 @@
             { id: 123, responsible: 'CÂNDIDO DA PAIXÃO', location: 'TRANSPORTES', mainCategory: 'infraestrutura_oficina', reportUrl:'https://drive.google.com/file/d/1P1A7gu4D0gdvaaUW5yqiBMAC15korvfW/view?usp=sharing', termUrl: '#' },
             { id: 124, responsible: 'LUIZ CARLOS DA SILVA', location: 'SALA 3410 – SALA DE AULA', mainCategory: 'infraestrutura_oficina', reportUrl:'https://drive.google.com/file/d/1bdy8TBfBzS1sICgxf5mQomiKbbQJ99Ab/view?usp=sharing', termUrl: '#' },
             { id: 125, responsible: 'LUIZ CARLOS DA SILVA', location: 'SALA 2804 – VESTIARIO DE ALUNOS', mainCategory: 'infraestrutura_oficina', reportUrl: 'https://drive.google.com/file/d/1dDQi-IyQmZq10DR9QZTY10Of5WRkYZlo/view?usp=sharing', termUrl: '#' },
-            { id: 126, responsible: 'LUIZ CARLOS DA SILVA', location: 'SALA 3417 – SALA DE AULA', mainCategory: 'infraestrutura_oficina', reportUrl: 'https://drive.google.com/file/d/1uy5w7Il_6KfVajemyDpd-kM5QRWFgbeh/view?usp=drive_link', termUrl: '#' },
+            { id: 126, responsible: 'LUIZ CARLOS DA SILVA', location: 'SALA 3417 – SALA DE AULA', mainCategory: 'infraestrutura_oficina', reportUrl: '#', termUrl: '#' },
             { id: 127, responsible: 'LUIZ CARLOS DA SILVA', location: 'SALA 3416 – SALA DE AULA', mainCategory: 'infraestrutura_oficina', reportUrl: 'https://drive.google.com/file/d/1NoPRkDloweGF8Rpr54ue0PEAdVfpffir/view?usp=sharing', termUrl: '#' },
             { id: 128, responsible: 'LUIZ CARLOS DA SILVA', location: 'SALA 3415 – SALA DE AULA', mainCategory: 'infraestrutura_oficina', reportUrl: 'https://drive.google.com/file/d/1TXoqMmLXUte5KJFD34iZDE29HKrZxwKR/view?usp=sharing', termUrl: '#' },
             { id: 129, responsible: 'LUIZ CARLOS DA SILVA', location: 'SALA 3414 – SALA DE AULA', mainCategory: 'infraestrutura_oficina', reportUrl: 'https://drive.google.com/file/d/14-0c17iZQ-l9jPHFS8yEGBHAuWpXsZXj/view?usp=sharing', termUrl: '#' },
@@ -531,20 +533,47 @@
         const backButton = document.getElementById('back-to-categories');
 
         // Evento de clique nas categorias principais
-        if (mainCategoriesContainer) {
-            mainCategoriesContainer.addEventListener('click', (e) => {
-                const categoryCard = e.target.closest('.category-card');
-                if (categoryCard) {
-                    const category = categoryCard.dataset.category;
-                    
-                    // Limpa a lista de subcategorias
-                    subcategoriesList.innerHTML = '';
+        mainCategoriesContainer.addEventListener('click', (e) => {
+            const categoryCard = e.target.closest('.category-card');
+            if (categoryCard) {
+                const category = categoryCard.dataset.category;
+                
+                // Limpa a lista de subcategorias
+                subcategoriesList.innerHTML = '';
 
-                    // Lógica para exibir os relatórios
-                    if (category === 'biblioteca' || category === 'infraestrutura_oficina') {
-                        const directReports = reportsData.filter(item => item.mainCategory === category);
-                        let reportsHTML = directReports.map(report => `
-                            <div class="bg-white rounded-lg p-4 border shadow-sm">
+                // Lógica para exibir os relatórios
+                if (category === 'biblioteca' || category === 'infraestrutura_oficina') {
+                    const directReports = reportsData.filter(item => item.mainCategory === category);
+                    let reportsHTML = directReports.map(report => `
+                        <div class="bg-white rounded-lg p-4 border shadow-sm">
+                            <h4 class="font-semibold text-gray-800">${report.location}</h4>
+                            <p class="text-sm text-gray-600 mb-3">Responsável: ${report.responsible}</p>
+                            <a href="${report.reportUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition text-sm">
+                                <i data-lucide="file-down" class="mr-2 h-4 w-4"></i>
+                                Baixar Relatório
+                            </a>
+                        </div>
+                    `).join('');
+                    subcategoriesList.innerHTML = `<div class="space-y-3">${reportsHTML}</div>`;
+
+                } else {
+                    const reportsBySubcategory = reportsData
+                        .filter(item => item.mainCategory === category)
+                        .reduce((acc, report) => {
+                            if (!acc[report.subCategory]) {
+                                acc[report.subCategory] = [];
+                            }
+                            acc[report.subCategory].push(report);
+                            return acc;
+                        }, {});
+
+                    for (const subCategoryName in reportsBySubcategory) {
+                        const reportsInSub = reportsBySubcategory[subCategoryName];
+                        const accordionItem = document.createElement('div');
+                        accordionItem.className = 'subcategory-accordion-item bg-white border rounded-lg';
+                        
+                        let reportsHTML = reportsInSub.map(report => `
+                            <div class="bg-gray-50 rounded-lg p-4 border">
                                 <h4 class="font-semibold text-gray-800">${report.location}</h4>
                                 <p class="text-sm text-gray-600 mb-3">Responsável: ${report.responsible}</p>
                                 <a href="${report.reportUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition text-sm">
@@ -553,99 +582,66 @@
                                 </a>
                             </div>
                         `).join('');
-                        subcategoriesList.innerHTML = `<div class="space-y-3">${reportsHTML}</div>`;
 
-                    } else {
-                        const reportsBySubcategory = reportsData
-                            .filter(item => item.mainCategory === category)
-                            .reduce((acc, report) => {
-                                if (!acc[report.subCategory]) {
-                                    acc[report.subCategory] = [];
-                                }
-                                acc[report.subCategory].push(report);
-                                return acc;
-                            }, {});
-
-                        for (const subCategoryName in reportsBySubcategory) {
-                            const reportsInSub = reportsBySubcategory[subCategoryName];
-                            const accordionItem = document.createElement('div');
-                            accordionItem.className = 'subcategory-accordion-item bg-white border rounded-lg';
-                            
-                            let reportsHTML = reportsInSub.map(report => `
-                                <div class="bg-gray-50 rounded-lg p-4 border">
-                                    <h4 class="font-semibold text-gray-800">${report.location}</h4>
-                                    <p class="text-sm text-gray-600 mb-3">Responsável: ${report.responsible}</p>
-                                    <a href="${report.reportUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition text-sm">
-                                        <i data-lucide="file-down" class="mr-2 h-4 w-4"></i>
-                                        Baixar Relatório
-                                    </a>
+                        accordionItem.innerHTML = `
+                            <button class="subcategory-header w-full flex justify-between items-center p-4 text-left font-semibold">
+                                <span>${subCategoryName}</span>
+                                <i data-lucide="chevron-down" class="transition-transform"></i>
+                            </button>
+                            <div class="subcategory-content">
+                                <div class="py-2 px-4 space-y-3">
+                                    ${reportsHTML}
                                 </div>
-                            `).join('');
-
-                            accordionItem.innerHTML = `
-                                <button class="subcategory-header w-full flex justify-between items-center p-4 text-left font-semibold">
-                                    <span>${subCategoryName}</span>
-                                    <i data-lucide="chevron-down" class="transition-transform"></i>
-                                </button>
-                                <div class="subcategory-content">
-                                    <div class="py-2 px-4 space-y-3">
-                                        ${reportsHTML}
-                                    </div>
-                                </div>
-                            `;
-                            subcategoriesList.appendChild(accordionItem);
-                        }
+                            </div>
+                        `;
+                        subcategoriesList.appendChild(accordionItem);
                     }
-                    
-                    lucide.createIcons();
-
-                    // Mostra a tela de subcategorias/resultados
-                    mainCategoriesContainer.classList.add('hidden');
-                    subcategoriesContainer.classList.remove('hidden');
                 }
-            });
-        }
+                
+                lucide.createIcons();
+
+                // Mostra a tela de subcategorias/resultados
+                mainCategoriesContainer.classList.add('hidden');
+                subcategoriesContainer.classList.remove('hidden');
+            }
+        });
 
         // Evento de clique no acordeão de subcategorias
-        if (subcategoriesList) {
-            subcategoriesList.addEventListener('click', (e) => {
-                const header = e.target.closest('.subcategory-header');
-                if (header) {
-                    const content = header.nextElementSibling;
-                    const icon = header.querySelector('svg');
-                    
-                    document.querySelectorAll('.subcategory-content').forEach(c => {
-                        if (c !== content) {
-                            c.style.maxHeight = null;
-                            c.style.paddingTop = '0';
-                            c.style.paddingBottom = '0';
-                            const otherIcon = c.previousElementSibling.querySelector('svg');
-                            if (otherIcon) otherIcon.classList.remove('rotate-180');
-                        }
-                    });
-                    
-                    if (content.style.maxHeight) {
-                        content.style.maxHeight = null;
-                        content.style.paddingTop = '0';
-                        content.style.paddingBottom = '0';
-                        if (icon) icon.classList.remove('rotate-180');
-                    } else {
-                        content.style.paddingTop = '0.5rem';
-                        content.style.paddingBottom = '0.5rem';
-                        content.style.maxHeight = content.scrollHeight + "px";
-                        if (icon) icon.classList.add('rotate-180');
+        subcategoriesList.addEventListener('click', (e) => {
+            const header = e.target.closest('.subcategory-header');
+            if (header) {
+                const content = header.nextElementSibling;
+                const icon = header.querySelector('svg');
+                
+                document.querySelectorAll('.subcategory-content').forEach(c => {
+                    if (c !== content) {
+                        c.style.maxHeight = null;
+                        c.style.paddingTop = '0';
+                        c.style.paddingBottom = '0';
+                        const otherIcon = c.previousElementSibling.querySelector('svg');
+                        if (otherIcon) otherIcon.classList.remove('rotate-180');
                     }
+                });
+                
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                    content.style.paddingTop = '0';
+                    content.style.paddingBottom = '0';
+                    if (icon) icon.classList.remove('rotate-180');
+                } else {
+                    content.style.paddingTop = '0.5rem';
+                    content.style.paddingBottom = '0.5rem';
+                    content.style.maxHeight = content.scrollHeight + "px";
+                    if (icon) icon.classList.add('rotate-180');
                 }
-            });
-        }
+            }
+        });
 
         // Evento do botão de voltar
-        if (backButton) {
-            backButton.addEventListener('click', () => {
-                subcategoriesContainer.classList.add('hidden');
-                mainCategoriesContainer.classList.remove('hidden');
-            });
-        }
+        backButton.addEventListener('click', () => {
+            subcategoriesContainer.classList.add('hidden');
+            mainCategoriesContainer.classList.remove('hidden');
+        });
 
         // Funcionalidade do FAQ (Modal Pop-up)
         const faqData = [
@@ -683,28 +679,26 @@
         const modalText = document.getElementById('modal-text');
         const modalIconContainer = document.getElementById('modal-icon-container');
 
-        if (faqCardsContainer) {
-            faqCardsContainer.addEventListener('click', (e) => {
-                const card = e.target.closest('.faq-card');
-                if (card) {
-                    const faqId = card.dataset.faqId;
-                    const data = faqData.find(item => item.id === faqId);
+        faqCardsContainer.addEventListener('click', (e) => {
+            const card = e.target.closest('.faq-card');
+            if (card) {
+                const faqId = card.dataset.faqId;
+                const data = faqData.find(item => item.id === faqId);
 
-                    if (data) {
-                        modalTitle.textContent = data.title;
-                        modalText.textContent = data.content;
-                        
-                        modalIconContainer.innerHTML = `<i data-lucide="${data.icon}" class="w-6 h-6 text-blue-600"></i>`;
-                        lucide.createIcons();
+                if (data) {
+                    modalTitle.textContent = data.title;
+                    modalText.textContent = data.content;
+                    
+                    modalIconContainer.innerHTML = `<i data-lucide="${data.icon}" class="w-6 h-6 text-blue-600"></i>`;
+                    lucide.createIcons();
 
-                        modal.classList.remove('hidden');
-                        setTimeout(() => {
-                            modalContent.classList.remove('scale-95', 'opacity-0');
-                        }, 10); // small delay to allow transition
-                    }
+                    modal.classList.remove('hidden');
+                    setTimeout(() => {
+                        modalContent.classList.remove('scale-95', 'opacity-0');
+                    }, 10); // small delay to allow transition
                 }
-            });
-        }
+            }
+        });
 
         function closeModal() {
             modalContent.classList.add('scale-95', 'opacity-0');
@@ -713,16 +707,12 @@
             }, 300); // match transition duration
         }
 
-        if (modalCloseBtn) {
-            modalCloseBtn.addEventListener('click', closeModal);
-        }
-        if (modal) {
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) {
-                    closeModal();
-                }
-            });
-        }
+        modalCloseBtn.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
         
         // Lógica do Contador
         const countdownContainer = document.getElementById('countdown-container');
@@ -732,42 +722,40 @@
 
         today.setHours(0, 0, 0, 0);
 
-        if (countdownContainer) {
-            if (today < startDate) {
-                const daysToStart = Math.ceil((startDate - today) / (1000 * 60 * 60 * 24));
+        if (today < startDate) {
+            const daysToStart = Math.ceil((startDate - today) / (1000 * 60 * 60 * 24));
+            countdownContainer.innerHTML = `
+                <i data-lucide="calendar-clock" class="mx-auto h-10 w-10 text-blue-600 mb-2"></i>
+                O período do inventário começa em <span class="text-blue-600">${daysToStart}</span> ${daysToStart > 1 ? 'dias' : 'dia'}.
+            `;
+        } else if (today >= startDate && today <= endDate) {
+            const daysRemaining = Math.ceil((endDate - today) / (1000 * 60 * 60 * 24));
+            if (daysRemaining > 1) {
                 countdownContainer.innerHTML = `
-                    <i data-lucide="calendar-clock" class="mx-auto h-10 w-10 text-blue-600 mb-2"></i>
-                    O período do inventário começa em <span class="text-blue-600">${daysToStart}</span> ${daysToStart > 1 ? 'dias' : 'dia'}.
+                    <i data-lucide="alarm-clock" class="mx-auto h-10 w-10 text-yellow-500 mb-2"></i>
+                    Faltam <span class="text-yellow-600">${daysRemaining}</span> dias para o fim do prazo.
                 `;
-            } else if (today >= startDate && today <= endDate) {
-                const daysRemaining = Math.ceil((endDate - today) / (1000 * 60 * 60 * 24));
-                if (daysRemaining > 1) {
-                    countdownContainer.innerHTML = `
-                        <i data-lucide="alarm-clock" class="mx-auto h-10 w-10 text-yellow-500 mb-2"></i>
-                        Faltam <span class="text-yellow-600">${daysRemaining}</span> dias para o fim do prazo.
-                    `;
-                } else if (daysRemaining === 1) {
-                    countdownContainer.innerHTML = `
-                        <i data-lucide="alarm-clock-off" class="mx-auto h-10 w-10 text-red-500 mb-2"></i>
-                        <span class="text-red-600">Atenção! O prazo termina hoje!</span>
-                    `;
-                } else {
-                    countdownContainer.innerHTML = `
-                        <i data-lucide="calendar-x-2" class="mx-auto h-10 w-10 text-red-500 mb-2"></i>
-                        <span class="text-red-600">Prazo Encerrado!</span>
-                    `;
-                }
+            } else if (daysRemaining === 1) {
+                countdownContainer.innerHTML = `
+                    <i data-lucide="alarm-clock-off" class="mx-auto h-10 w-10 text-red-500 mb-2"></i>
+                    <span class="text-red-600">Atenção! O prazo termina hoje!</span>
+                `;
             } else {
                 countdownContainer.innerHTML = `
-                    <i data-lucide="calendar-check-2" class="mx-auto h-10 w-10 text-green-600 mb-2"></i>
-                    <span class="text-green-700">O período para o inventário de 2025 foi encerrado.</span>
+                    <i data-lucide="calendar-x-2" class="mx-auto h-10 w-10 text-red-500 mb-2"></i>
+                    <span class="text-red-600">Prazo Encerrado!</span>
                 `;
             }
-            lucide.createIcons();
+        } else {
+            countdownContainer.innerHTML = `
+                <i data-lucide="calendar-check-2" class="mx-auto h-10 w-10 text-green-600 mb-2"></i>
+                <span class="text-green-700">O período para o inventário de 2025 foi encerrado.</span>
+            `;
         }
-    });
+        lucide.createIcons();
+
+
     </script>
 </body>
 </html>
-
 
